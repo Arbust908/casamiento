@@ -16,13 +16,13 @@ const show = ref(false)
 const modalTitle = computed(() => {
   switch (currentModal.value) {
     case PossibleModals.CEREMONIA:
-      return 'Ceremonia'
+      return 'Te esperamos para el Civil?'
     case PossibleModals.FIESTA:
       return 'Venis a la Fiesta?'
     case PossibleModals.MUSIC:
-      return 'Música'
+      return 'Pongamos play!'
     case PossibleModals.DRESS_CODE:
-      return 'Dress Code'
+      return 'Código de Vestimenta'
     case PossibleModals.DRIVE:
       return 'Como llego?'
     case PossibleModals.REGALOS:

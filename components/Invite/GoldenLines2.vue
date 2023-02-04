@@ -1,7 +1,3 @@
-<script setup lang='ts'>
-
-</script>
-
 <template>
   <svg
     x="0px" y="0px"
