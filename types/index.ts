@@ -18,6 +18,8 @@ interface EventData {
   endDateTime: string
   maps: string
   modal: string
+  description: string
+  fantasy_name: string
 }
 
 export type { Family, WorkingFamily, Guest, WorkingGuest, User, Role, ConfirmationStatusType, EventData }

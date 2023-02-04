@@ -8,6 +8,8 @@ export const PARTY: EventData = {
   endDateTime: '2023-03-25T01:00:00',
   maps: 'https://goo.gl/maps/z4yMM464VmvGzH5v7',
   modal: 'fiesta',
+  description: 'Nos Casamos! a festejar a lo grande! Comida, bebida, música y Gran Compania!',
+  fantasy_name: 'La fiesta de Alda y Fran',
 }
 export const CIVIL: EventData = {
   event: 'Ceremonia',
@@ -17,5 +19,7 @@ export const CIVIL: EventData = {
   endDateTime: '2023-03-21T01:00:00',
   maps: 'https://goo.gl/maps/bHFyh2YE8LUw2Wz67',
   modal: 'ceremonia',
+  description: 'Nos juntamos en La Sede Comunal 12 para celebrar el civil y despues con los que puedan vamos a almorzar a la vuelta.',
+  fantasy_name: 'El civil',
 }
 

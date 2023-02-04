@@ -62,9 +62,16 @@ const when = computed(() => {
     <div class="info-box">
       <h6>Lugar</h6>
       <p>{{ name }}</p>
-      <button class="btn" @click="openModal(`agendar_${modal}`)">
-        <span class="">Agendar</span>
-      </button>
+      <InviteScheduleBtn
+      :event="event"
+      :place="place"
+      :name="name"
+      :startDateTime="startDateTime"
+      :endDateTime="endDateTime"
+      :icon="icon"
+      :maps="maps"
+      :modal="modal"
+      />
     </div>
 
     <div class="info-box">
