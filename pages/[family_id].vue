@@ -172,7 +172,7 @@ const { url: civilUrl } = useGCalendar({
             Hagamos juntos una fiesta épica. Aquí algunos detalles a tener en cuenta.
         </p>
         <div
-            class="relative flex flex-col gap-8 items-center xl:flex-row xl:justify-around"
+            class="relative flex flex-col gap-8 items-center xl:flex-row xl:justify-center xl:gap-14"
         >
             <NuxtPicture
                 format="webp"
@@ -317,13 +317,13 @@ const { url: civilUrl } = useGCalendar({
             </button>
             <a
                 class="hover:(text-amber-500 underline)"
-                @click="openModal('agendar_fiesta')"
+                :href="partyUrl"
             >
                 Agendar fiesta
             </a>
             <a
                 class="hover:(text-amber-500 underline)"
-                @click="openModal('agendar_ceremonia')"
+                :href="civilUrl"
             >
                 Agendar ceremonia
             </a>
