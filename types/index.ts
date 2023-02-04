@@ -1,6 +1,7 @@
 import type { Family, WorkingFamily } from './Family'
 import type { Guest, WorkingGuest } from './Guest'
 import type { Role, User } from './User'
+import { PossibleModals } from '@/composables/general'
 
 export const ConfirmationStatus = {
   CONFIRMED: 3,
@@ -9,7 +10,7 @@ export const ConfirmationStatus = {
 } as const
 
 type ConfirmationStatusType = typeof ConfirmationStatus[keyof typeof ConfirmationStatus]
-
+type PossibleModalsType = typeof PossibleModals[keyof typeof PossibleModals]
 interface EventData {
   event: string
   place: string
@@ -17,9 +18,9 @@ interface EventData {
   startDateTime: string
   endDateTime: string
   maps: string
-  modal: string
+  modal: PossibleModalsType
   description: string
   fantasy_name: string
 }
 
-export type { Family, WorkingFamily, Guest, WorkingGuest, User, Role, ConfirmationStatusType, EventData }
+export type { Family, WorkingFamily, Guest, WorkingGuest, User, Role, ConfirmationStatusType, EventData, PossibleModalsType}

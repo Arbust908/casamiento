@@ -144,8 +144,8 @@ const { hasModal } = storeToRefs(generalState)
     </aside>
     <InviteGoldenLines class="absolute inset-x-0" />
     <div class="flex flex-col gap-y-8 lg:flex-row lg:gap-x-24 lg:gap-y-0 items-center justify-center lg:items-start">
-      <InviteEventCard class="z-10 relative mb-20" v-bind="PARTY" icon="" />
-      <InviteEventCard class="z-10 relative mb-20" v-bind="CIVIL" icon="" />
+      <InviteEventCard class="z-10 relative mb-20" v-bind="PARTY" />
+      <InviteEventCard class="z-10 relative mb-20" v-bind="CIVIL" />
     </div>
   </section>
   <!-- Fiesta -->
@@ -157,7 +157,7 @@ const { hasModal } = storeToRefs(generalState)
     <p class="mb-14">
       Hagamos juntos una fiesta épica. Aquí algunos detalles a tener en cuenta.
     </p>
-    <div class="relative flex flex-col gap-8 items-center lg:flex-row lg:justify-around">
+    <div class="relative flex flex-col gap-8 items-center xl:flex-row xl:justify-around">
       <NuxtPicture
         format="webp"
         loading="lazy"

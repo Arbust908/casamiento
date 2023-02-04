@@ -1,13 +1,15 @@
 <script setup lang='ts'>
+import type { PossibleModalsType } from '@/types'
 interface Props {
   event: string
   place: string
   name: string
   startDateTime: string
   endDateTime: string
-  icon: string
   maps: string
-  modal: string
+  modal: PossibleModalsType
+  description: string
+  fantasy_name: string
 }
 const props = defineProps<Props>()
 const generalState = useGeneralStore()
@@ -63,28 +65,25 @@ const when = computed(() => {
       <h6>Lugar</h6>
       <p>{{ name }}</p>
       <InviteScheduleBtn
-      :event="event"
-      :place="place"
-      :name="name"
-      :startDateTime="startDateTime"
-      :endDateTime="endDateTime"
-      :icon="icon"
-      :maps="maps"
-      :modal="modal"
+        :title="fantasy_name"
+        :location="place"
+        :description="description"
+        :startDateTime="startDateTime"
+        :endDateTime="endDateTime"
       />
     </div>
 
     <div class="info-box">
       <h6>Dirección</h6>
       <p>{{ place }}</p>
-      <button class="btn" :href="maps">
+      <a class="btn" :href="maps" target="_blank">
         ¿Cómo llegar?
-      </button>
+      </a>
     </div>
   </article>
 </template>
 
-<style scoped lang='scss'>
+<style scoped lang='postcss'>
 .bannerSvg {
     fill: #CFD6BB;
     @apply h-full;
