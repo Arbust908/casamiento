@@ -73,7 +73,7 @@ export const useFamilyStore = defineStore('family', () => {
     const selectedFamilyId = selectedFamily.value?.id
     if (!selectedFamilyId)
       return console.error('No family selected')
-    
+
     const payload = {
       id: selectedFamilyId,
       songTitle,
@@ -87,15 +87,6 @@ export const useFamilyStore = defineStore('family', () => {
     selectedFamily.value!.songTitle = res.songTitle
     return res
   }
-  /* async function createFamily(family: WorkingFamily) {
-    const res = await $fetch('/api/families', {
-      method: 'POST',
-      body: JSON.stringify(family),
-    })
-
-    families.value.push(res.family)
-    return res
-  } */
 
   return {
     families,

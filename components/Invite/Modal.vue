@@ -60,13 +60,6 @@ const modalTitle = computed(() => {
     <aside v-if="backdropOpen" class="modal__backdrop cursor-pointer" @click.self="closeModal()">
       <Transition name="pop-up">
         <article v-if="boxOpen" class="modal__box cursor-auto">
-          <!-- <NuxtPicture
-        format="webp"
-        loading="lazy"
-        src="/images/Grupo_PopUpMusica.webp"
-        class="modal-decoration top"
-        :img-attrs="{ class: 'inline-block' }"
-      /> -->
           <div class="i-ri-close-line text-slate-200 absolute top-3 right-6 w-8 h-8 cursor-pointer" @click="closeModal" />
           <h3 class="modal__title">
             {{ modalTitle }}
@@ -78,14 +71,6 @@ const modalTitle = computed(() => {
           <InviteDressCodeModal v-else-if="currentModal === PossibleModals.DRESS_CODE" />
           <InviteDriveModal v-else-if="currentModal === PossibleModals.DRIVE" />
           <InvitePresentModal v-else-if="currentModal === PossibleModals.REGALOS" />
-
-          <!-- <NuxtPicture
-        format="webp"
-        loading="lazy"
-        src="/images/Grupo_PopUpMusica-2.webp"
-        class="modal-decoration bottom"
-        :img-attrs="{ class: 'inline-block' }"
-      /> -->
         </article>
       </Transition>
     </aside>
@@ -110,7 +95,7 @@ const modalTitle = computed(() => {
     }
   }
   &__title {
-    @apply text-2xl text-center font-bold mb-4;
+    @apply text-2xl text-center font-bold mb-12;
   }
   &__btn {
     @apply rounded-xl bg-slate-100 border border-transparent text-slate-700 hover:bg-transparent hover:text-slate-100 hover:border-slate-100 py-1 px-3 mx-auto;

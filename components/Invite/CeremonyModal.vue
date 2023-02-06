@@ -36,12 +36,11 @@ onBeforeMount(() => {
 </script>
 
 <template>
-  <section class="space-y-4 flex flex-col items-end">
-    <p>Fiesta</p>
+  <section class="space-y-6 flex flex-col items-end">
     <template v-for="g in guests" :key="g.id">
       <InviteGuestSelectionCeremony :guest="g" class="w-full" @change="handleConfirmChange" />
     </template>
-    <button class="btn main" @click="handleConfirm">
+    <button class="btn main !mt-8" @click="handleConfirm">
       Contestar
     </button>
   </section>

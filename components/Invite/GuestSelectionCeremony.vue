@@ -49,17 +49,17 @@ function selectedClasses(selection: ConfirmationStatusType) {
       {{ guest.name }}
     </p>
     <div class="px-4 py-1 rounded bg-slate-500 relative">
-      <button :class="selectedClasses(CONFIRMED)" class="w-16 p-1 relative z-10" @click="handleSelection(CONFIRMED)">
-        Voy!
-      </button>
       <button :class="selectedClasses(DECLINED)" class="w-16 p-1 relative z-10" @click="handleSelection(DECLINED)">
         No voy
+      </button>
+      <button :class="selectedClasses(CONFIRMED)" class="w-16 p-1 relative z-10" @click="handleSelection(CONFIRMED)">
+        Voy!
       </button>
       <Transition name="pop">
         <aside
           v-if="answer" class="bg-slate-300 rounded w-16 h-8 absolute top-1 z-1 transition duration-150 transform ease-out" :class="{
-            'translate-x-0': confirmation === CONFIRMED,
-            'translate-x-16': confirmation === DECLINED,
+            'translate-x-0': confirmation === DECLINED,
+            'translate-x-16': confirmation === CONFIRMED,
           }"
         />
       </Transition>

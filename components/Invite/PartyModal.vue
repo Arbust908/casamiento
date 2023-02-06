@@ -36,8 +36,7 @@ onBeforeMount(() => {
 </script>
 
 <template>
-  <section class="space-y-4 flex flex-col items-end">
-    <p>Fiesta</p>
+  <section class="space-y-6 flex flex-col items-end">
     <template v-for="g in guests" :key="g.id">
       <InviteGuestSelection :guest="g" class="w-full" @change="handleConfirmChange" />
     </template>
@@ -45,7 +44,7 @@ onBeforeMount(() => {
       <span class="text-sm">Comentanos restricción alimenticia y cualquier otra cosa</span>
       <textarea id="party_comment" v-model="comment" placeholder="1 vegano - 2 vegetarianos - todos listos para menear" class="w-full rounded-lg border border-slate-200 bg-transparent px-4 pt-3 pb-5 my-3 min-h-10" />
     </label>
-    <button class="btn main" @click="handleConfirm">
+    <button class="btn main !mt-8" @click="handleConfirm">
       Contestar
     </button>
   </section>
