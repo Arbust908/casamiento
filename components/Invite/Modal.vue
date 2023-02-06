@@ -3,6 +3,9 @@ import { storeToRefs } from 'pinia'
 import { PossibleModals, useGeneralStore } from '@/composables/general'
 import { useFamilyStore } from '@/stores/family'
 
+const props = defineProps<{
+  open: boolean
+}>()
 const generalState = useGeneralStore()
 const familyState = useFamilyStore()
 
@@ -11,7 +14,26 @@ const { selectedFamily } = storeToRefs(familyState)
 const { currentModal } = storeToRefs(generalState)
 const { closeModal } = generalState
 
-const show = ref(false)
+const backdropOpen = ref(false)
+const boxOpen = ref(false)
+
+watch(
+  () => props.open,
+  (open) => {
+    if (open) {
+      backdropOpen.value = true
+      setTimeout(() => {
+        boxOpen.value = true
+      }, 300)
+    }
+    else {
+      boxOpen.value = false
+      setTimeout(() => {
+        backdropOpen.value = false
+      }, 300)
+    }
+  },
+)
 
 const modalTitle = computed(() => {
   switch (currentModal.value) {
@@ -34,42 +56,40 @@ const modalTitle = computed(() => {
 </script>
 
 <template>
-  <aside class="modal__backdrop cursor-pointer" @click.self="closeModal()">
-    <article class="modal__box cursor-auto">
-      <NuxtPicture
+  <Transition name="fade-in">
+    <aside v-if="backdropOpen" class="modal__backdrop cursor-pointer" @click.self="closeModal()">
+      <Transition name="pop-up">
+        <article v-if="boxOpen" class="modal__box cursor-auto">
+          <!-- <NuxtPicture
         format="webp"
         loading="lazy"
         src="/images/Grupo_PopUpMusica.webp"
         class="modal-decoration top"
         :img-attrs="{ class: 'inline-block' }"
-      />
-      <div class="i-ri-close-line text-slate-200 absolute top-3 right-6 w-8 h-8 cursor-pointer" @click="closeModal" />
-      <h3 class="modal__title">
-        {{ modalTitle }}
-      </h3>
-      <button @click="show = true">
-        -
-      </button>
-      <p v-if="show" class="mb-4" @click="show = false">
-        {{ selectedFamily }}
-      </p>
+      /> -->
+          <div class="i-ri-close-line text-slate-200 absolute top-3 right-6 w-8 h-8 cursor-pointer" @click="closeModal" />
+          <h3 class="modal__title">
+            {{ modalTitle }}
+          </h3>
 
-      <InviteCeremonyModal v-if="currentModal === PossibleModals.CEREMONIA" />
-      <InvitePartyModal v-else-if="currentModal === PossibleModals.FIESTA" :guests="selectedFamily?.guests" />
-      <InviteMusicModal v-else-if="currentModal === PossibleModals.MUSIC" />
-      <InviteDressCodeModal v-else-if="currentModal === PossibleModals.DRESS_CODE" />
-      <InviteDriveModal v-else-if="currentModal === PossibleModals.DRIVE" />
-      <InvitePresentModal v-else-if="currentModal === PossibleModals.REGALOS" />
+          <InviteCeremonyModal v-if="currentModal === PossibleModals.CEREMONIA" />
+          <InvitePartyModal v-else-if="currentModal === PossibleModals.FIESTA" :guests="selectedFamily?.guests" />
+          <InviteMusicModal v-else-if="currentModal === PossibleModals.MUSIC" />
+          <InviteDressCodeModal v-else-if="currentModal === PossibleModals.DRESS_CODE" />
+          <InviteDriveModal v-else-if="currentModal === PossibleModals.DRIVE" />
+          <InvitePresentModal v-else-if="currentModal === PossibleModals.REGALOS" />
 
-      <NuxtPicture
+          <!-- <NuxtPicture
         format="webp"
         loading="lazy"
         src="/images/Grupo_PopUpMusica-2.webp"
         class="modal-decoration bottom"
         :img-attrs="{ class: 'inline-block' }"
-      />
-    </article>
-  </aside>
+      /> -->
+        </article>
+      </Transition>
+    </aside>
+  </Transition>
 </template>
 
 <style scoped lang='scss'>
@@ -78,9 +98,7 @@ const modalTitle = computed(() => {
     @apply fixed inset-0 bg-gray-700/50 backdrop-blur-md z-30 flex justify-center items-center h-full;
   }
   &__box {
-    @apply max-w-md w-full rounded p-5 bg-slate-700 relative transform;
-    animation: fade-in 0.6s ease-in-out;
-    will-change: opacity transform;
+    @apply max-w-md w-full rounded p-5 bg-slate-700 relative transform will-change-auto;
   }
   &-decoration {
     @apply absolute -z-1 w-full inset-x-0 transition;
@@ -98,15 +116,22 @@ const modalTitle = computed(() => {
     @apply rounded-xl bg-slate-100 border border-transparent text-slate-700 hover:bg-transparent hover:text-slate-100 hover:border-slate-100 py-1 px-3 mx-auto;
   }
 }
-@keyframes fade-in {
-  0% {
-    @apply opacity-0 scale-50;
-  }
-  90% {
-    @apply opacity-100 scale-105;
-  }
-  100% {
-    @apply opacity-100 scale-100;
-  }
+/* fade in vue3 transition animation */
+.fade-in-enter-active,
+.fade-in-leave-active {
+  @apply transition-opacity duration-300;
+}
+.fade-in-enter,
+.fade-in-leave-to {
+  @apply opacity-0;
+}
+/* pop up vue3 transition animation */
+.pop-up-enter-active,
+.pop-up-leave-active {
+  @apply transition-all duration-300;
+}
+.pop-up-enter,
+.pop-up-leave-to {
+  @apply transform scale-50 opacity-0;
 }
 </style>

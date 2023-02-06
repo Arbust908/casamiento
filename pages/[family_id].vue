@@ -7,7 +7,7 @@ import { useFamilyStore } from '@/stores/family'
 const familyState = useFamilyStore()
 const { family_id } = useRoute().params
 const family_UUID = computed(() => Array.isArray(family_id) ? family_id[0] : family_id)
-const { data, error } = useAsyncData('family', async () => await familyState.fetchFamilyByUUID(family_UUID.value))
+const { data } = useAsyncData('family', async () => await familyState.fetchFamilyByUUID(family_UUID.value))
 
 const { daysLeft, hoursLeft, minutesLeft } = useCountdown(
   PARTY.startDateTime,
@@ -293,7 +293,7 @@ const { url: civilUrl } = useGCalendar({
         </div>
     </section>
     <Teleport to="body">
-        <InviteModal v-show="hasModal" />
+        <InviteModal :open="hasModal" />
     </Teleport>
     <!-- Footer -->
     <section class="flex flex-col px-6 gap-y-5 items-center">

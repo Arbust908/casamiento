@@ -68,8 +68,8 @@ const when = computed(() => {
         :title="fantasy_name"
         :location="place"
         :description="description"
-        :startDateTime="startDateTime"
-        :endDateTime="endDateTime"
+        :start-date-time="startDateTime"
+        :end-date-time="endDateTime"
       />
     </div>
 
@@ -83,7 +83,7 @@ const when = computed(() => {
   </article>
 </template>
 
-<style scoped lang='postcss'>
+<style scoped lang='scss'>
 .bannerSvg {
     fill: #CFD6BB;
     @apply h-full;

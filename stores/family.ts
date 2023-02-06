@@ -18,7 +18,7 @@ export const useFamilyStore = defineStore('family', () => {
 
   async function fetchFamilyByUUID(uuid: string) {
     try {
-      const res = await $fetch(`/api/family/${uuid}`)
+      const res = await $fetch(`/api/family/${uuid}`) as { family: Family }
       selectFamily(res.family)
       return res.family
     }
@@ -69,6 +69,24 @@ export const useFamilyStore = defineStore('family', () => {
     }
   }
 
+  async function submitSong(songTitle: string) {
+    const selectedFamilyId = selectedFamily.value?.id
+    if (!selectedFamilyId)
+      return console.error('No family selected')
+    
+    const payload = {
+      id: selectedFamilyId,
+      songTitle,
+    }
+
+    const res = await $fetch('/api/family/song', {
+      method: 'PUT',
+      body: JSON.stringify(payload),
+    }) as { songTitle: string }
+
+    selectedFamily.value!.songTitle = res.songTitle
+    return res
+  }
   /* async function createFamily(family: WorkingFamily) {
     const res = await $fetch('/api/families', {
       method: 'POST',
@@ -86,6 +104,7 @@ export const useFamilyStore = defineStore('family', () => {
     fetchFamilies,
     fetchFamilyByUUID,
     confirmFamily,
+    submitSong,
   }
 })
 

@@ -5,14 +5,6 @@ import { useGeneralStore } from '@/composables/general'
 const generalState = useGeneralStore()
 
 const { hasModal } = storeToRefs(generalState)
-/* useHead({
-  title: 'Vitesse Nuxt 3',
-  link: [
-    {
-      rel: 'icon', type: 'image/png', href: '/nuxt.png',
-    },
-  ],
-}) */
 
 const documentHeight = () => {
   // https://nirazanbasnet.medium.com/dont-use-100vh-for-mobile-responsive-43a709c7e9e6
