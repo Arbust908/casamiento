@@ -12,7 +12,6 @@ const emit = defineEmits<Emits>()
 
 const selected = ref(props.options.find(option => option.id === props.selectedId))
 watch(selected, (value) => {
-  console.log('change')
   emit('update:selectedId', value?.id || -1)
 })
 </script>

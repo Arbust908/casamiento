@@ -338,12 +338,12 @@ const { url: civilUrl } = useGCalendar({
   </section>
 </template>
 
-<style lang="scss" scoped>
+<style lang="postcss" scoped>
 section {
-    @apply py-12;
+    --at-apply: py-12;
 }
 .header-decoration {
-    @apply absolute -top-20;
+    --at-apply: absolute -top-20;
     animation: drop-fade 1.5s ease-in-out both;
     animation-delay: 1s;
     &.delay-2 {
@@ -354,7 +354,7 @@ section {
     }
 }
 .date-decorator {
-    @apply w-full h-px bg-slate-100;
+    --at-apply: w-full h-px bg-slate-100;
 }
 
 @keyframes drop-fade {

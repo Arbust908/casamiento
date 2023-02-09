@@ -1,12 +1,12 @@
 interface GEvent {
-  title: string;
-  location: string;
-  description: string;
-  startDateTime: string;
-  endDateTime: string;
+  title: string
+  location: string
+  description: string
+  startDateTime: string
+  endDateTime: string
 }
-function gDateFormatter(date: string){
-  return date.replaceAll('-', '').replaceAll(':', '');
+function gDateFormatter(date: string) {
+  return date.replaceAll('-', '').replaceAll(':', '')
 }
 export function useGCalendar(event: GEvent) {
   const url = computed(() => {
@@ -16,9 +16,8 @@ export function useGCalendar(event: GEvent) {
     const description = encodeURIComponent(event.description)
     const startDateTime = encodeURIComponent(gDateFormatter(event.startDateTime))
     const endDateTime = encodeURIComponent(gDateFormatter(event.endDateTime))
-  
-  
-      return `https://calendar.google.com/calendar/u/0/r/eventedit?dates=${startDateTime}/${endDateTime}&ctz=America/Buenos_Aires&text=${title}&location=${location}&details=${description}&uid=c527e48a-9c90-468a-bb81-9f36d320e191`
+
+    return `https://calendar.google.com/calendar/u/0/r/eventedit?dates=${startDateTime}/${endDateTime}&ctz=America/Buenos_Aires&text=${title}&location=${location}&details=${description}&uid=c527e48a-9c90-468a-bb81-9f36d320e191`
   })
 
   return {

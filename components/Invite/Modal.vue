@@ -80,43 +80,46 @@ const modalTitle = computed(() => {
 <style scoped lang='scss'>
 .modal {
   &__backdrop {
-    @apply fixed inset-0 bg-gray-700/50 backdrop-blur-md z-30 flex justify-center items-center h-full;
+    --at-apply: fixed inset-0 bg-gray-700/50 backdrop-blur-md z-30 flex justify-center items-center h-full;
   }
   &__box {
-    @apply max-w-md w-full rounded p-5 bg-slate-700 relative transform will-change-auto;
+    --at-apply: max-w-md w-full rounded p-5 bg-slate-700 relative transform will-change-auto;
   }
   &-decoration {
-    @apply absolute -z-1 w-full inset-x-0 transition;
+    --at-apply: absolute -z-1 w-full inset-x-0 transition;
     &.top {
-      @apply top-0 -translate-y-full -scale-x-100;
+      --at-apply: top-0 -translate-y-full -scale-x-100;
     }
     &.bottom {
-      @apply bottom-0 translate-y-full;
+      --at-apply: bottom-0 translate-y-full;
     }
   }
   &__title {
-    @apply text-2xl text-center font-bold mb-12;
+    --at-apply: text-2xl text-center font-bold mb-12;
   }
   &__btn {
-    @apply rounded-xl bg-slate-100 border border-transparent text-slate-700 hover:bg-transparent hover:text-slate-100 hover:border-slate-100 py-1 px-3 mx-auto;
+    --at-apply: rounded-xl bg-slate-100 border border-transparent text-slate-700 py-1 px-3 mx-auto;
+    &:hover {
+      --at-apply: bg-transparent text-slate-100 border-slate-100;
+    }
   }
 }
 /* fade in vue3 transition animation */
 .fade-in-enter-active,
 .fade-in-leave-active {
-  @apply transition-opacity duration-300;
+  --at-apply: transition-opacity duration-300;
 }
 .fade-in-enter,
 .fade-in-leave-to {
-  @apply opacity-0;
+  --at-apply: opacity-0;
 }
 /* pop up vue3 transition animation */
 .pop-up-enter-active,
 .pop-up-leave-active {
-  @apply transition-all duration-300;
+  --at-apply: transition-all duration-300;
 }
 .pop-up-enter,
 .pop-up-leave-to {
-  @apply transform scale-50 opacity-0;
+  --at-apply: transform scale-50 opacity-0;
 }
 </style>

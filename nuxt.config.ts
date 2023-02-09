@@ -1,5 +1,3 @@
-// import { HstNuxt } from '@histoire/plugin-nuxt'
-
 export default defineNuxtConfig({
   app: {
     head: {
@@ -18,8 +16,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
   ],
   css: [
-    'anu-vue/dist/style.css',
-    '@/assets/main.scss',
+    '@/assets/main.css',
   ],
   experimental: {
     viteNode: false,

@@ -1,4 +1,3 @@
-import { serverSupabaseClient } from '#supabase/server'
 import guestList from '@/server/guests'
 import type { WorkingFamily, WorkingGuest } from '@/types'
 
@@ -25,6 +24,7 @@ const result = guestListArray.map((guest) => {
   }
   return guestObject
 }).map((guest) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { email, delete1, ...correctedGuest } = guest
   return correctedGuest
 }).reduce((acc, guest, i) => {
@@ -60,7 +60,7 @@ const result = guestListArray.map((guest) => {
   acc.push([_family, _guests])
 
   return acc
-}, [])
+}, [] as any[])
 
 export default defineEventHandler(() => ({
   result,

@@ -1,7 +1,7 @@
 import type { Family, WorkingFamily } from './Family'
 import type { Guest, WorkingGuest } from './Guest'
 import type { Role, User } from './User'
-import { PossibleModals } from '@/composables/general'
+import type { PossibleModals } from '@/composables/general'
 
 export const ConfirmationStatus = {
   CONFIRMED: 3,
@@ -23,4 +23,4 @@ interface EventData {
   fantasy_name: string
 }
 
-export type { Family, WorkingFamily, Guest, WorkingGuest, User, Role, ConfirmationStatusType, EventData, PossibleModalsType}
+export type { Family, WorkingFamily, Guest, WorkingGuest, User, Role, ConfirmationStatusType, EventData, PossibleModalsType }

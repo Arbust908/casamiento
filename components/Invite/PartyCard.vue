@@ -1,10 +1,10 @@
 <script setup lang='ts'>
 import type { PossibleModalsType } from '@/types'
 interface Props {
-  title: string;
-  icon: string;
-  text: string;
-  btnText: string;
+  title: string
+  icon: string
+  text: string
+  btnText: string
   modal: PossibleModalsType
 }
 defineProps<Props>()
@@ -36,6 +36,6 @@ const { openModal } = (useGeneralStore())
 
 <style scoped lang="postcss">
 .party_btn {
-  @apply rounded-xl bg-slate-100 text-slate-600 font-bold px-6 py-2 uppercase;
+  --at-apply: rounded-xl bg-slate-100 text-slate-600 font-bold px-6 py-2 uppercase;
 }
 </style>

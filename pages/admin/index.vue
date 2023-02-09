@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Family } from '@/types'
 import { ConfirmationStatus } from '@/types'
-import AdminStats from '~~/components/Admin/AdminStats.vue'
+import AdminStats from '@/components/Admin/AdminStats.vue'
 interface Metric {
   name: string
   value: string
@@ -174,18 +174,18 @@ definePageMeta({
   </section>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
   .table-head,
   .table-body {
     grid-template-columns: 24px 180px 32px 140px 120px 110px 1fr;
 
-    @apply grid gap-8;
+    --at-apply: grid gap-8;
   }
   .table-head {
-    @apply text-lg font-light text-gray-200 my-4 px-6;
+    --at-apply: text-lg font-light text-gray-200 my-4 px-6;
   }
 
   .table-body {
-    @apply text-sm font-normal text-gray-600 items-center px-4 py-4 sm:px-6 hover:bg-gray-100;
+    --at-apply: text-sm font-normal text-gray-600 items-center px-4 py-4 sm:px-6 hover:bg-gray-100;
   }
 </style>

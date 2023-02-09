@@ -34,12 +34,12 @@ const { CONFIRMED, DECLINED, PENDING } = ConfirmationStatus
   </span>
 </template>
 
-<style scoped lang='scss'>
+<style scoped lang='postcss'>
 .confirmation-pill {
-    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium mr-auto;
+    --at-apply: "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium mr-auto";
 
     & > .dot {
-        @apply -ml-0.5 mr-1.5 h-2 w-2;
+        --at-apply: -ml-0.5 mr-1.5 h-2 w-2;
     }
 }
 </style>

@@ -69,9 +69,9 @@ function selectedClasses(selection: ConfirmationStatusType) {
 
 <style scoped lang='scss'>
 .pop-enter-active, .pop-leave-active {
-  @apply transition duration-300 transform ease-out;
+  --at-apply: transition duration-300 transform ease-out;
 }
 .pop-enter, .pop-leave-to {
-  @apply translate-y-0 opacity-0 scale-0;
+  --at-apply: translate-y-0 opacity-0 scale-0;
 }
 </style>

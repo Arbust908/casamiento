@@ -4,10 +4,6 @@
   </section>
 </template>
 
-<script setup lang='ts'>
-  
-</script>
-
 <style scoped lang='scss'>
     /* https://csshero.org/mesher/ */
 .magic-bg {
