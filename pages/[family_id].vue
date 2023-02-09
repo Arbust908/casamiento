@@ -338,7 +338,7 @@ const { url: civilUrl } = useGCalendar({
   </section>
 </template>
 
-<style lang="postcss" scoped>
+<style scoped lang="scss">
 section {
     --at-apply: py-12;
 }

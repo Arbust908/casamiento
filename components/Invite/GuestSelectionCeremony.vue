@@ -67,7 +67,7 @@ function selectedClasses(selection: ConfirmationStatusType) {
   </article>
 </template>
 
-<style scoped lang='postcss'>
+<style scoped lang='scss'>
 .pop-enter-active, .pop-leave-active {
   --at-apply: transition duration-300 transform ease-out;
 }

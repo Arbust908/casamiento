@@ -34,7 +34,7 @@ const { openModal } = (useGeneralStore())
   </div>
 </template>
 
-<style scoped lang="postcss">
+<style scoped lang="scss">
 .party_btn {
   --at-apply: rounded-xl bg-slate-100 text-slate-600 font-bold px-6 py-2 uppercase;
 }

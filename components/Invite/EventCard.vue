@@ -83,7 +83,7 @@ const when = computed(() => {
   </article>
 </template>
 
-<style scoped lang='postcss'>
+<style scoped lang='scss'>
 .bannerSvg {
     fill: #CFD6BB;
     --at-apply: h-full;

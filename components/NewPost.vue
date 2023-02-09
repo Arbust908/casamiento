@@ -16,7 +16,3 @@
     <button>Ver mas</button>
   </section>
 </template>
-
-<style scoped lang='scss'>
-
-</style>

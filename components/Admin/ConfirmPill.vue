@@ -34,7 +34,7 @@ const { CONFIRMED, DECLINED, PENDING } = ConfirmationStatus
   </span>
 </template>
 
-<style scoped lang='postcss'>
+<style scoped lang='scss'>
 .confirmation-pill {
     --at-apply: "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium mr-auto";
 

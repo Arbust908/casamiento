@@ -7,7 +7,3 @@
     <h2>Refraction</h2>
   </section>
 </template>
-
-<style scoped lang='scss'>
-
-</style>
