@@ -4,13 +4,24 @@ import { ConfirmationStatus } from '@/types'
 interface Props {
   confirmed: ConfirmationStatusType
 }
-withDefaults(
+const props = withDefaults(
   defineProps<Props>(),
   {
     confirmed: ConfirmationStatus.PENDING,
   },
 )
 const { CONFIRMED, DECLINED, PENDING } = ConfirmationStatus
+
+const confirmationText = computed(() => {
+  switch (props.confirmed) {
+    case CONFIRMED:
+      return 'Viene'
+    case DECLINED:
+      return 'No viene'
+    default:
+      return 'Pendiente'
+  }
+})
 </script>
 
 <template>
@@ -30,7 +41,7 @@ const { CONFIRMED, DECLINED, PENDING } = ConfirmationStatus
     >
       <circle cx="4" cy="4" r="3" />
     </svg>
-    {{ confirmed === PENDING ? 'Sin respuesta' : confirmed === DECLINED ? 'No viene' : 'Viene' }}
+    {{ confirmationText }}
   </span>
 </template>
 

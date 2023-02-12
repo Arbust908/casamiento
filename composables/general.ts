@@ -22,11 +22,11 @@ export const useGeneralStore = defineStore('general', () => {
   }
 
   function openModal(modal: PossibleModalsTypes) {
-    currentModal.value = modal
+    setModal(modal)
   }
 
   function closeModal() {
-    currentModal.value = null
+    setModal(null)
   }
 
   return {
@@ -39,4 +39,4 @@ export const useGeneralStore = defineStore('general', () => {
 })
 
 if (import.meta.hot)
-  import.meta.hot.accept(acceptHMRUpdate(useUserStore, import.meta.hot))
+  import.meta.hot.accept(acceptHMRUpdate(useGeneralStore, import.meta.hot))

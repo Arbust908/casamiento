@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import { storeToRefs } from 'pinia'
 import type { Family } from '@/types'
 import { ConfirmationStatus } from '@/types'
-import AdminStats from '@/components/Admin/AdminStats.vue'
 interface Metric {
   name: string
   value: string
@@ -11,8 +11,10 @@ const { CONFIRMED, DECLINED, PENDING } = ConfirmationStatus
 
 const { data } = await useFetch('/api/families')
 const families = computed<Family[]>(() => data.value?.families ?? [])
+const generalState = useGeneralStore()
 
-const showFilter = ref(false)
+const { openModal } = generalState
+const { hasModal } = storeToRefs(generalState)
 
 const confirmedFilter = ref<false | number>(false)
 const groupFilter = ref<string[]>([])
@@ -33,13 +35,7 @@ const filterFamilies = (flias: Family[]) => {
       return true
 
     return groupFilter.value.includes(family.group)
-  })
-}
-
-const nonHeadClasses = (isHead: number) => {
-  return {
-    'opacity-0': !isHead,
-  }
+  }).sort((fa: Family, fb: Family) => fa.id > fb.id ? 1 : -1)
 }
 
 const metrics = computed<Metric[]>(() => {
@@ -100,10 +96,43 @@ const statusOptions: statusOptionType[] = [
 
 const statusSelected = ref(statusOptions[0])
 
+const copiedText = ref('')
+
 const handleStatusSelection = (id: number) => {
   statusSelected.value = statusOptions.find(option => option.id === id) ?? statusOptions[0]
   confirmedFilter.value = statusSelected.value.value
   filteredFamilies.value = filterFamilies(families.value)
+}
+
+const statusBtnClasses = (id: number) => {
+  const theme = {
+    0: 'bg-slate-800 text-slate-100',
+    1: 'bg-gray-800 text-gray-100',
+    2: 'bg-rose-800 text-rose-100',
+    3: 'bg-emerald-800 text-emerald-100',
+  } as { [key: number]: string }
+  const active = statusSelected.value.id === id
+
+  return {
+    'px-2 py-1 rounded transform': true,
+    [theme[id]]: true,
+    'opacity-50 hover:(opacity-100 shadow -translate-y-1)': !active,
+    'hover:(opacity-50 translate-y-1)': active,
+  }
+}
+const handleCopyLink = (link: string) => {
+  const text = `Copiaste el link: ${link}`
+  copiedText.value = text
+  setTimeout(() => {
+    copiedText.value = ''
+  }, 2000)
+}
+const modalTitle = ref('')
+const modalFamily = ref<Family>()
+const handleFamilyModal = (fam: Family) => {
+  modalTitle.value = fam.name
+  modalFamily.value = fam
+  openModal('fiesta')
 }
 
 definePageMeta({
@@ -114,19 +143,12 @@ definePageMeta({
 <template>
   <section class="p-4 rounded bg-slate-800 h-full text-slate-600">
     <AdminStats :metrics="metrics" />
-    {{ families.length }}
-    <nav class="m-2 mt-4 flex justify-end">
-      <div v-if="showFilter" class="flex gap-x-4 text-slate-400">
-        <LazyAdminDropDown :options="statusOptions" :selected-id="statusSelected.id" @update:selected-id="handleStatusSelection" />
-        {{ confirmedFilter }}
-      </div>
-      <button class="w-6 h-6 flex justify-center items-center rounded-full p-2 hover:bg-slate-300" @click="showFilter = !showFilter">
-        <div v-if="showFilter" class="i-ri-close-line text-slate-500" />
-        <div v-else class="i-ri-filter-3-line text-slate-500" />
+    <nav class="m-2 mt-4 flex justify-end gap-x-3">
+      <button v-for="opt in statusOptions" :key="opt.id" :class="statusBtnClasses(opt.id)" @click="handleStatusSelection(opt.id)">
+        {{ opt.name }}
       </button>
     </nav>
     <div class="table-head">
-      <span />
       <span>Familia</span>
       <span />
       <span>Nombre</span>
@@ -136,56 +158,43 @@ definePageMeta({
     </div>
     <div class="overflow-hidden bg-white shadow sm:rounded-md">
       <ul role="list">
-        <template v-for="item in filteredFamilies" :key="item.id">
-          <li v-for="guest in item.guests" :key="guest.id" class="table-body">
-            <input type="checkbox" :class="nonHeadClasses(guest.isHead)">
-            <span class="text-sm font-medium text-gray-700" :class="nonHeadClasses(guest.isHead)">
-              {{ item.name }}
-            </span>
-            <span class="i-bx:crown w-5 h-5" :class="nonHeadClasses(guest.isHead)" />
-            <span class="text-sm font-medium text-gray-700">
-              {{ guest.name }}
-            </span>
-            <AdminConfirmPill :confirmed="guest.confirmed" />
-            <span class="block mr-auto text-sm font-medium bg-rose-600 px-2 py-px rounded-full text-white" :class="nonHeadClasses(guest.isHead)">
-              {{ item.group }}
-            </span>
-            <div class="flex items-center gap-x-3">
-              <button v-if="guest.isHead" class="flex items-center justify-center p-1 rounded hover:bg-rose-200 hover:shadow hover:text-rose-600">
-                <span class="i-bx:music w-5 h-5" />
-                <!-- <span class="text-sm truncate">{{ item.songTitle }}</span> -->
-              </button>
-              <button v-if="guest.isHead" class="flex items-center justify-center p-1 rounded hover:bg-rose-200 hover:shadow hover:text-rose-600">
-                <span class="i-bx:comment-detail w-5 h-5" />
-                <!-- <span class="text-sm truncate">{{ item.comments }}</span> -->
-              </button>
-              <button class="flex items-center justify-center p-1 rounded hover:bg-rose-200 hover:shadow hover:text-rose-600 disabled:opacity-50" disabled>
-                <span class="i-bx:x-circle w-5 h-5" />
-              </button>
-              <button class="flex items-center justify-center p-1 rounded hover:bg-rose-200 hover:shadow hover:text-rose-600">
-                <span class="i-bx:info-square w-5 h-5" />
-              </button>
-            </div>
-          </li>
-          <hr class="border-2 border-rose-100 mx-8 rounded-full my-4">
-        </template>
+        <AdminFamilyRow
+          v-for="family in filteredFamilies"
+          :key="family.id"
+          :family="family"
+          @copy-link="handleCopyLink"
+          @family-modal="handleFamilyModal"
+        />
       </ul>
     </div>
+    <Teleport to="body">
+      <AdminToast v-if="copiedText">
+        <template #icon>
+          <span class="i-bx:copy-alt w-5 h-5" />
+        </template>
+        <p>{{ copiedText }}</p>
+      </AdminToast>
+    </Teleport>
+    <Teleport to="body">
+      <AdminModal :open="hasModal">
+        <template #title>
+          {{ modalTitle }}
+        </template>
+        <AdminModalContent :family="modalFamily" />
+      </AdminModal>
+    </Teleport>
   </section>
 </template>
 
-<style scoped>
-  .table-head,
-  .table-body {
-    grid-template-columns: 24px 180px 32px 140px 120px 110px 1fr;
+<style scoped lang="scss">
+.table {
+  &-head {
+    grid-template-columns: 180px 32px 140px 120px 110px 1fr;
 
     --at-apply: grid gap-8;
   }
-  .table-head {
+  &-head {
     --at-apply: text-lg font-light text-gray-200 my-4 px-6;
   }
-
-  .table-body {
-    --at-apply: text-sm font-normal text-gray-600 items-center px-4 py-4 sm:px-6 hover:bg-gray-100;
-  }
+}
 </style>

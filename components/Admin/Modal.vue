@@ -1,17 +1,11 @@
 <script setup lang='ts'>
-import { storeToRefs } from 'pinia'
-import { PossibleModals, useGeneralStore } from '@/composables/general'
-import { useFamilyStore } from '@/stores/family'
+import { useGeneralStore } from '@/composables/general'
 
 const props = defineProps<{
   open: boolean
 }>()
 const generalState = useGeneralStore()
-const familyState = useFamilyStore()
 
-const { selectedFamily } = storeToRefs(familyState)
-
-const { currentModal } = storeToRefs(generalState)
 const { closeModal } = generalState
 
 const backdropOpen = ref(false)
@@ -34,25 +28,6 @@ watch(
     }
   },
 )
-
-const modalTitle = computed(() => {
-  switch (currentModal.value) {
-    case PossibleModals.CEREMONIA:
-      return 'Te esperamos para el Civil?'
-    case PossibleModals.FIESTA:
-      return 'Venis a la Fiesta?'
-    case PossibleModals.MUSIC:
-      return 'Pongamos play!'
-    case PossibleModals.DRESS_CODE:
-      return 'Código de Vestimenta'
-    case PossibleModals.DRIVE:
-      return 'Como llego?'
-    case PossibleModals.REGALOS:
-      return 'Regalos'
-    default:
-      return ''
-  }
-})
 </script>
 
 <template>
@@ -62,15 +37,9 @@ const modalTitle = computed(() => {
         <article v-if="boxOpen" class="modal__box cursor-auto">
           <div class="i-ri-close-line text-slate-200 absolute top-3 right-6 w-8 h-8 cursor-pointer" @click="closeModal" />
           <h3 class="modal__title">
-            {{ modalTitle }}
+            <slot name="title" />
           </h3>
-
-          <InviteCeremonyModal v-if="currentModal === PossibleModals.CEREMONIA" />
-          <InvitePartyModal v-else-if="currentModal === PossibleModals.FIESTA" :guests="selectedFamily?.guests" />
-          <InviteMusicModal v-else-if="currentModal === PossibleModals.MUSIC" />
-          <InviteDressCodeModal v-else-if="currentModal === PossibleModals.DRESS_CODE" />
-          <InviteDriveModal v-else-if="currentModal === PossibleModals.DRIVE" />
-          <InvitePresentModal v-else-if="currentModal === PossibleModals.REGALOS" />
+          <slot />
         </article>
       </Transition>
     </aside>

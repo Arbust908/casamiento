@@ -9,7 +9,7 @@ const { family_id } = useRoute().params
 const family_UUID = computed(() => Array.isArray(family_id) ? family_id[0] : family_id)
 const { data } = useAsyncData('family', async () => await familyState.fetchFamilyByUUID(family_UUID.value))
 
-const { daysLeft, hoursLeft, minutesLeft } = useCountdown(
+const { daysLeft, hoursLeft, minutesLeft, secondsLeft } = useCountdown(
   PARTY.startDateTime,
 )
 const topDate = useDateFormat(PARTY.startDateTime, 'DD.MM.YYYY')
@@ -19,16 +19,16 @@ const generalState = useGeneralStore()
 const { openModal } = (generalState)
 const { hasModal } = storeToRefs(generalState)
 
-const { MUSIC, DRESS_CODE, DRIVE, FIESTA, CEREMONIA } = PossibleModals
+const { MUSIC, DRESS_CODE, DRIVE, FIESTA, CEREMONIA, REGALOS } = PossibleModals
 const { url: partyUrl } = useGCalendar({
-  title: PARTY.fantasy_name,
+  title: PARTY.fantasyName,
   location: PARTY.place,
   description: PARTY.description,
   startDateTime: PARTY.startDateTime,
   endDateTime: PARTY.endDateTime,
 })
 const { url: civilUrl } = useGCalendar({
-  title: CIVIL.fantasy_name,
+  title: CIVIL.fantasyName,
   location: CIVIL.place,
   description: CIVIL.description,
   startDateTime: CIVIL.startDateTime,
@@ -38,7 +38,7 @@ const { url: civilUrl } = useGCalendar({
 
 <template>
   <!-- Portada -->
-  <section class="relative h-9/10">
+  <section class="relative py-14 min-h-[700px]">
     <NuxtPicture
       format="webp"
       class="absolute inset-0 -z-1"
@@ -80,15 +80,15 @@ const { url: civilUrl } = useGCalendar({
         </span>
         <div class="date-decorator" />
       </div>
-      <h1 class="text-6xl center flex flex-col items-center">
+      <h1 class="text-[130px] center flex gap-6 items-center font-main">
         <span>Alda</span>
-        <span>&</span>
+        <span class="font-sans font-semibold text-[40px] text-slate-300">&</span>
         <span>Fran</span>
       </h1>
-      <div class="p-6 w-full">
+      <div class="px-6 w-full">
         <div class="date-decorator" />
       </div>
-      <h2 class="text-3xl">
+      <h2 class="text-[24px] font-regular">
         Hola {{ data?.name }}!!!
       </h2>
     </div>
@@ -100,8 +100,8 @@ const { url: civilUrl } = useGCalendar({
     />
   </section>
   <!-- Cuenta Regresiva -->
-  <section class="bg-slate-800 flex justify-center items-center py-10">
-    <div class="grid max-w-lg">
+  <section class="bg-slate-800 flex justify-center items-center py-10 relative">
+    <div class="grid max-w-lg -top-10">
       <NuxtPicture
         format="webp"
         class="col-start-1 row-start-1"
@@ -109,11 +109,11 @@ const { url: civilUrl } = useGCalendar({
         src="/images/contador_2.png"
       />
       <div
-        class="col-start-1 row-start-1 flex flex-col gap-y-8 justify-center items-center"
+        class="col-start-1 row-start-1 flex flex-col gap-y-6 justify-center items-center"
       >
-        <span class="text-4xl font-bold">Falta</span>
+        <span class="text-6xl font-bold font-main">Falta</span>
 
-        <div class="flex divide-x-2 divide-slate-500">
+        <div class="flex divide-x-2 divide-slate-500 max-sm:max-w-sm">
           <ClientOnly>
             <div class="flex flex-col gap-y-3 px-4 py-1 items-center w-20">
               <span class="text-4xl font-light">{{ daysLeft }}</span>
@@ -129,9 +129,13 @@ const { url: civilUrl } = useGCalendar({
               <span class="text-4xl font-light">{{ minutesLeft }}</span>
               <span class="text-lg font-bold">min</span>
             </div>
+            <div class="flex flex-col gap-y-3 px-4 py-1 items-center w-20">
+              <span class="text-4xl font-light">{{ secondsLeft }}</span>
+              <span class="text-lg font-bold">seg</span>
+            </div>
           </ClientOnly>
         </div>
-        <span class="text-xl font-bold"> para la fiesta! </span>
+        <span class="text-4xl font-bold font-main"> para la fiesta! </span>
       </div>
     </div>
   </section>
@@ -168,10 +172,10 @@ const { url: civilUrl } = useGCalendar({
   <!-- Fiesta -->
   <section class="bg-slate-800 px-6 flex flex-col justify-center text-center">
     <InviteGoldenLines2 />
-    <h2 class="text-4xl font-light">
+    <h2 class="text-6xl font-main">
       Fiesta
     </h2>
-    <p class="mb-14">
+    <p class="mt-10 mb-14">
       Hagamos juntos una fiesta épica. Aquí algunos detalles a tener en cuenta.
     </p>
     <div
@@ -194,7 +198,7 @@ const { url: civilUrl } = useGCalendar({
       <!-- Dress Code -->
       <InvitePartyCard
         title="Dress Code"
-        text="Una orientación para <br> tu vestuario"
+        text="Una orientación para tu vestuario"
         icon="vestuario"
         btn-text="ver más"
         :modal="DRESS_CODE"
@@ -202,7 +206,7 @@ const { url: civilUrl } = useGCalendar({
       <!-- Notas -->
       <InvitePartyCard
         title="Tips y Notas"
-        text="Información adicional <br> para tener en cuenta"
+        text="Información adicional para tener en cuenta"
         icon="tips"
         btn-text="+ Info"
         :modal="DRIVE"
@@ -238,9 +242,9 @@ const { url: civilUrl } = useGCalendar({
     </div>
 
     <div
-      class="flex flex-col text-center gap-y-10 max-w-sm mx-auto px-10 relative z-10"
+      class="flex flex-col text-center gap-y-10 mx-auto px-10 relative z-10"
     >
-      <h2 class="text-3xl">
+      <h2 class="text-6xl font-main">
         Regalos
       </h2>
       <p class="subtitle">
@@ -248,17 +252,18 @@ const { url: civilUrl } = useGCalendar({
       </p>
 
       <NuxtPicture
-        class="inline-block"
+        class="inline-block cursor-pointer"
         preload
         src="/svg/regalos.svg"
         :img-attrs="{ class: 'h-24 w-24 mx-auto' }"
+        @click="openModal(REGALOS)"
       />
 
       <br>
 
       <button
         class="btn main rounded-xl bg-slate-100 text-slate-600 font-bold px-6 py-2 uppercase w-50 mx-auto"
-        @click="openModal('regalos')"
+        @click="openModal(REGALOS)"
       >
         Ver más
       </button>
@@ -274,8 +279,8 @@ const { url: civilUrl } = useGCalendar({
       src="/images/fondo.png"
       :img-attrs="{ class: 'relative h-full w-full object-cover' }"
     />
-    <div class="max-w-sm mx-auto px-4 text-center space-y-12">
-      <h2 class="text-3xl">
+    <div class="mx-auto px-4 text-center space-y-12">
+      <h2 class="text-6xl font-main">
         Compartimos este día junto a vos
       </h2>
       <p class="px-4">
@@ -288,7 +293,7 @@ const { url: civilUrl } = useGCalendar({
         <a
           target="_blank"
           href="https://www.instagram.com/"
-          class="text-4xl font-ligth tracking-wide text-slate-300 uppercase"
+          class="text-4xl font-light tracking-wide text-slate-300 uppercase"
         >#aldayfran</a>
       </div>
 
@@ -304,9 +309,9 @@ const { url: civilUrl } = useGCalendar({
   </Teleport>
   <!-- Footer -->
   <section class="flex flex-col px-6 gap-y-5 items-center">
-    <h4 class="text-3xl font-light flex text-center gap-4">
+    <h4 class="text-6xl font-main flex text-center gap-4">
       <span>Alda</span>
-      <span class="text-slate-500">&</span>
+      <span class="text-slate-400">&</span>
       <span>Fran</span>
     </h4>
     <div class="flex flex-col gap-y-6 lg:flex-row lg:gap-y-0 lg:gap-x-6">
@@ -323,13 +328,13 @@ const { url: civilUrl } = useGCalendar({
         Sugerir canción
       </button>
       <a
-        class="hover:(text-amber-500 underline)"
+        class="hover:(text-amber-500 underline) text-center"
         :href="partyUrl"
       >
         Agendar fiesta
       </a>
       <a
-        class="hover:(text-amber-500 underline)"
+        class="hover:(text-amber-500 underline) text-center"
         :href="civilUrl"
       >
         Agendar ceremonia
@@ -340,7 +345,7 @@ const { url: civilUrl } = useGCalendar({
 
 <style scoped lang="scss">
 section {
-    --at-apply: py-12;
+    --at-apply: py-[10vw] lg:py-[5vw];
 }
 .header-decoration {
     --at-apply: absolute -top-20;

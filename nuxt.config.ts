@@ -18,9 +18,20 @@ export default defineNuxtConfig({
   css: [
     '@/assets/main.css',
   ],
-  experimental: {
-    viteNode: false,
+  vite: {
+    server: {
+      hmr: {
+        clientPort: 24600,
+        port: 24600,
+      },
+      watch: {
+        usePolling: true,
+      },
+    },
   },
+  /* experimental: {
+    viteNode: false,
+  }, */
   unocss: {
     preflight: true,
   },

@@ -20,7 +20,7 @@ interface EventData {
   maps: string
   modal: PossibleModalsType
   description: string
-  fantasy_name: string
+  fantasyName: string
 }
 
 export type { Family, WorkingFamily, Guest, WorkingGuest, User, Role, ConfirmationStatusType, EventData, PossibleModalsType }

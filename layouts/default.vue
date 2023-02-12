@@ -1,10 +1,5 @@
 <script setup lang="ts">
-import { storeToRefs } from 'pinia'
-import { useGeneralStore } from '@/composables/general'
 
-const generalState = useGeneralStore()
-
-const { hasModal } = storeToRefs(generalState)
 </script>
 
 <template>

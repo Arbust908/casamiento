@@ -11,7 +11,7 @@ import {
 
 export default defineConfig({
   shortcuts: [
-    ['btn', 'inline-block rounded-xl px-4 py-2 mt-4 transition duration-300 ease-in-out hover:shadow-lg transform hover:-translate-y-1 hover:scale-110'],
+    ['btn', 'inline-block rounded-2xl px-4 py-2 mt-4 transition duration-300 ease-in-out hover:shadow-lg transform hover:-translate-y-1 hover:scale-110'],
     ['icon-btn', 'inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600'],
     ['border-base', 'border-gray-200 dark:border-dark-200'],
     ['bg-base', 'bg-white dark:bg-dark-100'],
@@ -32,9 +32,10 @@ export default defineConfig({
     presetTypography(),
     presetWebFonts({
       fonts: {
-        sans: 'DM Sans',
+        sans: 'Open Sans',
         serif: 'DM Serif Display',
         mono: 'DM Mono',
+        main: 'Cookie',
       },
     }),
   ],

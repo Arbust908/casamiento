@@ -2,6 +2,8 @@
 import { storeToRefs } from 'pinia'
 import { useGeneralStore } from '@/composables/general'
 
+import 'vue3-lottie/dist/style.css'
+
 const generalState = useGeneralStore()
 
 const { hasModal } = storeToRefs(generalState)

@@ -9,7 +9,7 @@ interface Props {
   maps: string
   modal: PossibleModalsType
   description: string
-  fantasy_name: string
+  fantasyName: string
 }
 const props = defineProps<Props>()
 const generalState = useGeneralStore()
@@ -30,11 +30,11 @@ const when = computed(() => {
 </script>
 
 <template>
-  <article class="flex flex-col justify-center items-center gap-y-6 max-w-sm">
+  <article class="flex flex-col justify-center items-center gap-y-6 w-[320px]">
     <picture class="p-6 rounded-full bg-slate-600 text-slate-200">
       <SvgCeremony />
     </picture>
-    <h3 class="grid grid-cols-[15px_1fr_15px]">
+    <h3 class="grid grid-cols-[15px_1fr_15px] w-full">
       <svg
         x="0px" y="0px"
         viewBox="0 0 19.8 65.3"
@@ -42,7 +42,7 @@ const when = computed(() => {
       >
         <polygon class="bannerSvg" points="19.8,65.3 19.8,0 0,0 19.3,32.1 0,65.3 " />
       </svg>
-      <span class="flex items-center bg-[#CFD6BB] text-2xl font-bold text-slate-800 px-4 p-4 uppercase">
+      <span class="flex items-center bg-[#CFD6BB] text-5xl font-bold text-slate-800 px-4 justify-center font-main">
         {{ event }}
       </span>
       <svg
@@ -56,7 +56,7 @@ const when = computed(() => {
     <div class="info-box">
       <h6>Día</h6>
       <p>{{ when }}</p>
-      <button class="btn main" @click="openModal(modal)">
+      <button class="btn main w-[220px]" @click="openModal(modal)">
         Confirmar asistencia
       </button>
     </div>
@@ -65,18 +65,19 @@ const when = computed(() => {
       <h6>Lugar</h6>
       <p>{{ name }}</p>
       <InviteScheduleBtn
-        :title="fantasy_name"
+        :title="fantasyName"
         :location="place"
         :description="description"
         :start-date-time="startDateTime"
         :end-date-time="endDateTime"
+        class="w-[220px]"
       />
     </div>
 
     <div class="info-box">
       <h6>Dirección</h6>
       <p>{{ place }}</p>
-      <a class="btn" :href="maps" target="_blank">
+      <a class="btn w-[220px]" :href="maps" target="_blank">
         ¿Cómo llegar?
       </a>
     </div>
