@@ -80,7 +80,7 @@ const { url: civilUrl } = useGCalendar({
         </span>
         <div class="date-decorator" />
       </div>
-      <h1 class="text-[130px] center flex gap-6 items-center font-main">
+      <h1 class="text-[100px] md:text-[130px] center flex gap-6 items-center font-main">
         <span>Alda</span>
         <span class="font-sans font-semibold text-[40px] text-slate-300">&</span>
         <span>Fran</span>

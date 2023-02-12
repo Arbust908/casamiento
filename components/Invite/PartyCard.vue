@@ -12,25 +12,23 @@ const { openModal } = (useGeneralStore())
 </script>
 
 <template>
-  <div class="bg-slate-600 rounded-xl shadow w-[300px] h-[400px] relative flex-shrink-0">
-    <div class="p-6 space-y-8">
-      <h3 class="text-6xl font-main">
-        {{ title }}
-      </h3>
+  <div class="bg-slate-600 rounded-xl shadow w-[300px] h-[400px] relative flex-shrink-0 p-6 flex flex-col justify-between">
+    <h3 class="text-6xl font-main">
+      {{ title }}
+    </h3>
 
-      <NuxtPicture
-        class="inline-block"
-        preload
-        :src="`/svg/${icon}.svg`"
-        :img-attrs="{ class: 'h-24 w-24 mx-auto' }"
-      />
+    <NuxtPicture
+      class="inline-block"
+      preload
+      :src="`/svg/${icon}.svg`"
+      :img-attrs="{ class: 'h-24 w-24 mx-auto' }"
+    />
 
-      <p v-html="text" />
+    <p v-html="text" />
 
-      <button class="btn main party_btn" @click="openModal(modal)">
-        {{ btnText }}
-      </button>
-    </div>
+    <button class="btn main party_btn" @click="openModal(modal)">
+      {{ btnText }}
+    </button>
   </div>
 </template>
 
