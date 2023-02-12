@@ -114,31 +114,31 @@ const { url: civilUrl } = useGCalendar({
       <div
         class="col-start-1 row-start-1 flex flex-col gap-y-6 justify-center items-center"
       >
-        <span class="text-[40px] font-semibold">Falta</span>
+        <span class="text-[40px] font-regular">Falta</span>
 
         <div class="flex divide-x-2 divide-slate-500 max-sm:max-w-sm">
           <ClientOnly>
             <div class="flex flex-col gap-y-3 px-4 py-1 items-center w-20">
-              <span class="text-4xl font-light">{{ daysLeft }}</span>
-              <span class="text-lg font-bold">días</span>
+              <span class="text-4xl font-semibold">{{ daysLeft }}</span>
+              <span class="text-lg font-light">días</span>
             </div>
 
             <div class="flex flex-col gap-y-3 px-4 py-1 items-center w-20">
-              <span class="text-4xl font-light">{{ hoursLeft }}</span>
-              <span class="text-lg font-bold">hs</span>
+              <span class="text-4xl font-semibold">{{ hoursLeft }}</span>
+              <span class="text-lg font-light">hs</span>
             </div>
 
             <div class="flex flex-col gap-y-3 px-4 py-1 items-center w-20">
-              <span class="text-4xl font-light">{{ minutesLeft }}</span>
-              <span class="text-lg font-bold">min</span>
+              <span class="text-4xl font-semibold">{{ minutesLeft }}</span>
+              <span class="text-lg font-light">min</span>
             </div>
             <div class="flex flex-col gap-y-3 px-4 py-1 items-center w-20">
-              <span class="text-4xl font-light">{{ secondsLeft }}</span>
-              <span class="text-lg font-bold">seg</span>
+              <span class="text-4xl font-semibold">{{ secondsLeft }}</span>
+              <span class="text-lg font-light">seg</span>
             </div>
           </ClientOnly>
         </div>
-        <span class="text-[28px] font-semibold"> para la fiesta! </span>
+        <span class="text-[28px] font-regular"> para la fiesta! </span>
       </div>
     </div>
   </section>

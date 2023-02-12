@@ -21,10 +21,10 @@ async function handleConfirm() {
 
   <form class="flex flex-col" @submit.prevent="handleConfirm">
     <label for="song" class="text-slate-200 my-4">
-      <p>Recomendanos <b class="text-orange-400">ESA</b> cancion que no puede faltar</p>
+      <p>Recomendanos <b class="text-brick-400">ESA</b> cancion que no puede faltar</p>
     </label>
     <input id="song" v-model="songTitle" type="text" class="border border-slate-200 rounded-lg p-2 mb-4">
-    <button class="bg-orange-500 text-orange-100 rounded-2xl ml-auto py-2 px-6 uppercase text-center transition duration-150 ease-in-out hover:(text-orange-200 bg-orange-600 shadow)">
+    <button class="bg-brick-500 text-brick-100 rounded-2xl ml-auto py-2 px-6 uppercase text-center transition duration-150 ease-in-out hover:(text-brick-200 bg-brick-600 shadow)">
       Toma!
     </button>
   </form>

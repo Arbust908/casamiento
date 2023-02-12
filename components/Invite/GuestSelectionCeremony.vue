@@ -49,11 +49,11 @@ function selectedClasses(selection: ConfirmationStatusType) {
       {{ guest.name }}
     </p>
     <div class="px-4 py-1 rounded bg-slate-500 relative">
-      <button :class="selectedClasses(DECLINED)" class="w-16 p-1 relative z-10" @click="handleSelection(DECLINED)">
-        No voy
-      </button>
       <button :class="selectedClasses(CONFIRMED)" class="w-16 p-1 relative z-10" @click="handleSelection(CONFIRMED)">
         Voy!
+      </button>
+      <button :class="selectedClasses(DECLINED)" class="w-16 p-1 relative z-10" @click="handleSelection(DECLINED)">
+        No voy
       </button>
       <Transition name="pop">
         <aside
