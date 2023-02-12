@@ -8,3 +8,9 @@
     <Footer />
   </div>
 </template>
+
+<style scoped lang="scss">
+div {
+  scroll-behavior: smooth;
+}
+</style>

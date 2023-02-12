@@ -6,6 +6,7 @@ const props = defineProps<{
 }>()
 
 const emits = defineEmits(['deleteFamily', 'deleteGuest', 'familyModal', 'copyLink'])
+const runtimeConfig = useRuntimeConfig()
 
 const nonHeadClasses = (isHead: number) => {
   return {
@@ -14,7 +15,7 @@ const nonHeadClasses = (isHead: number) => {
 }
 
 const makeFamilyLink = (uuid: string) => {
-  const BASE_URL = 'localhost:3000'
+  const BASE_URL = runtimeConfig.public.baseUrl
   const familyLink = `${BASE_URL}/${uuid}`
   navigator.clipboard.writeText(familyLink)
   emits('copyLink', familyLink)

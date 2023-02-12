@@ -12,7 +12,7 @@ const { openModal } = (useGeneralStore())
 </script>
 
 <template>
-  <div class="bg-slate-600 rounded-xl shadow max-w-sm relative flex-shrink-0 w-screen-sm">
+  <div class="bg-slate-600 rounded-xl shadow w-[300px] h-[400px] relative flex-shrink-0">
     <div class="p-6 space-y-8">
       <h3 class="text-6xl font-main">
         {{ title }}

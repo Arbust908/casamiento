@@ -36,6 +36,7 @@ export default defineConfig({
         serif: 'DM Serif Display',
         mono: 'DM Mono',
         main: 'Cookie',
+        gatobuho: 'Space Mono',
       },
     }),
   ],

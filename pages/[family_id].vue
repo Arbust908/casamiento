@@ -38,7 +38,7 @@ const { url: civilUrl } = useGCalendar({
 
 <template>
   <!-- Portada -->
-  <section class="relative py-14 min-h-[700px]">
+  <section class="relative py-14 min-h-full">
     <NuxtPicture
       format="webp"
       class="absolute inset-0 -z-1"
@@ -91,6 +91,9 @@ const { url: civilUrl } = useGCalendar({
       <h2 class="text-[24px] font-regular">
         Hola {{ data?.name }}!!!
       </h2>
+      <NuxtLink href="#regresiva">
+        <i class="i-ri-arrow-drop-down-line text-6xl animate-bounce mt-6" />
+      </NuxtLink>
     </div>
     <InviteTopCurve
       class="absolute -bottom-px w-full -z-1"
@@ -101,7 +104,7 @@ const { url: civilUrl } = useGCalendar({
   </section>
   <!-- Cuenta Regresiva -->
   <section class="bg-slate-800 flex justify-center items-center py-10 relative">
-    <div class="grid max-w-lg -top-10">
+    <div class="grid max-w-lg -top-40 relative">
       <NuxtPicture
         format="webp"
         class="col-start-1 row-start-1"
@@ -111,7 +114,7 @@ const { url: civilUrl } = useGCalendar({
       <div
         class="col-start-1 row-start-1 flex flex-col gap-y-6 justify-center items-center"
       >
-        <span class="text-6xl font-bold font-main">Falta</span>
+        <span class="text-[40px] font-semibold">Falta</span>
 
         <div class="flex divide-x-2 divide-slate-500 max-sm:max-w-sm">
           <ClientOnly>
@@ -135,7 +138,7 @@ const { url: civilUrl } = useGCalendar({
             </div>
           </ClientOnly>
         </div>
-        <span class="text-4xl font-bold font-main"> para la fiesta! </span>
+        <span class="text-[28px] font-semibold"> para la fiesta! </span>
       </div>
     </div>
   </section>
@@ -161,7 +164,7 @@ const { url: civilUrl } = useGCalendar({
         src="/images/Grupo02_c.png"
       />
     </aside>
-    <InviteGoldenLines class="absolute inset-x-0" />
+    <InviteGoldenLines id="regresiva" class="absolute inset-x-0" />
     <div
       class="flex flex-col gap-y-8 lg:flex-row lg:gap-x-24 lg:gap-y-0 items-center justify-center lg:items-start lg:max-w-2xl lg:justify-between mx-auto"
     >
@@ -172,10 +175,10 @@ const { url: civilUrl } = useGCalendar({
   <!-- Fiesta -->
   <section class="bg-slate-800 px-6 flex flex-col justify-center text-center">
     <InviteGoldenLines2 />
-    <h2 class="text-6xl font-main">
+    <h2 class="text-[60px] font-main">
       Fiesta
     </h2>
-    <p class="mt-10 mb-14">
+    <p class="mt-10 mb-14 text-[20px]">
       Hagamos juntos una fiesta épica. Aquí algunos detalles a tener en cuenta.
     </p>
     <div
@@ -217,34 +220,20 @@ const { url: civilUrl } = useGCalendar({
   <section
     class="relative overflow-hidden bg-gradient-to-b from-slate-800 to-slate-700"
   >
-    <div class="absolute w-6/12 -right-10 top-10 opacity-50 z-1 lg:w-3/12 lg:right-0">
+    <div class="absolute w-6/12 -right-20 top-10 opacity-50 z-1 lg:w-3/12">
       <NuxtPicture
         format="webp"
         loading="lazy"
-        src="/images/Grupo02_a.png"
-        class="absolute -scale-x-100"
-        :img-attrs="{ class: 'inline-block' }"
-      />
-      <NuxtPicture
-        format="webp"
-        loading="lazy"
-        src="/images/Grupo02_b.png"
-        class="absolute -scale-x-100"
-        :img-attrs="{ class: 'inline-block' }"
-      />
-      <NuxtPicture
-        format="webp"
-        loading="lazy"
-        src="/images/Grupo02_c.png"
-        class="absolute -scale-x-100"
-        :img-attrs="{ class: 'inline-block' }"
+        src="/images/Grupo02.png"
+        class="-scale-x-100 relative top-0 h-full inline-block"
+        :img-attrs="{ class: 'inline-block w-full' }"
       />
     </div>
 
     <div
       class="flex flex-col text-center gap-y-10 mx-auto px-10 relative z-10"
     >
-      <h2 class="text-6xl font-main">
+      <h2 class="text-[60px] font-main">
         Regalos
       </h2>
       <p class="subtitle">
@@ -259,8 +248,6 @@ const { url: civilUrl } = useGCalendar({
         @click="openModal(REGALOS)"
       />
 
-      <br>
-
       <button
         class="btn main rounded-xl bg-slate-100 text-slate-600 font-bold px-6 py-2 uppercase w-50 mx-auto"
         @click="openModal(REGALOS)"
@@ -268,6 +255,7 @@ const { url: civilUrl } = useGCalendar({
         Ver más
       </button>
     </div>
+    <InviteGoldenLines2 />
   </section>
   <!-- <section class="bg-gradient-to-b from-slate-800 via-slate-800 to-slate-600" /> -->
   <!-- Instagram -->
@@ -279,15 +267,19 @@ const { url: civilUrl } = useGCalendar({
       src="/images/fondo.png"
       :img-attrs="{ class: 'relative h-full w-full object-cover' }"
     />
-    <div class="mx-auto px-4 text-center space-y-12">
-      <h2 class="text-6xl font-main">
+    <div class="mx-auto px-4 text-center space-y-8">
+      <h2 class="text-[60px] font-main">
         Compartimos este día junto a vos
       </h2>
       <p class="px-4">
         Compartí tus fotos y videos de ese hermoso día
       </p>
 
-      <div class="px-4" />
+      <div class="px-4 inline-flex w-full justify-center">
+        <div class="p-4 flex justify-center items-center rounded-full border-4">
+          <i class="i-ri-instagram-line w-10 h-10" />
+        </div>
+      </div>
 
       <div class="px-4">
         <a
@@ -297,11 +289,15 @@ const { url: civilUrl } = useGCalendar({
         >#aldayfran</a>
       </div>
 
+      <div class="px-4 inline-block w-full" />
+
       <a
         class="inline-block rounded-full bg-slate-100 text-slate-600 font-bold px-6 py-3 uppercase"
         target="_blank"
         href="https://www.instagram.com/"
       >Ver en Instagram</a>
+
+      <div class="px-4 inline-block w-full" />
     </div>
   </section>
   <Teleport to="body">
@@ -309,12 +305,12 @@ const { url: civilUrl } = useGCalendar({
   </Teleport>
   <!-- Footer -->
   <section class="flex flex-col px-6 gap-y-5 items-center">
-    <h4 class="text-6xl font-main flex text-center gap-4">
+    <h4 class="text-6xl font-main flex text-center gap-4 flex items-center">
       <span>Alda</span>
-      <span class="text-slate-400">&</span>
+      <span class="text-slate-400 font-sans text-[40px]">&</span>
       <span>Fran</span>
     </h4>
-    <div class="flex flex-col gap-y-6 lg:flex-row lg:gap-y-0 lg:gap-x-6">
+    <div class="flex flex-col gap-y-6 lg:flex-row lg:gap-y-0 lg:gap-x-6 font-sans text-[16px]">
       <button
         class="hover:(text-amber-500 underline)"
         @click="openModal(CEREMONIA)"
