@@ -1,5 +1,6 @@
 <script setup lang='ts'>
 import type { Family, Guest } from '@/types'
+import { glue } from '@/utils/glue'
 
 const props = defineProps<{
   family: Family
@@ -14,13 +15,26 @@ const nonHeadClasses = (isHead: number) => {
   }
 }
 
-const makeFamilyLink = (uuid: string) => {
+const makeFamilyLink = (fam: Family) => {
   const BASE_URL = runtimeConfig.public.baseUrl
+  const uuid = fam.uuid
   const familyLink = `${BASE_URL}/${uuid}`
-  navigator.clipboard.writeText(familyLink)
-  emits('copyLink', familyLink)
 
-  return familyLink
+  const guestArray = fam.guests.map(g => g.name)
+  const mainGuest = fam.guests.find(g => g.isHead)
+
+  const msg = `Buenas ${mainGuest?.name}! 
+Como ya sabés, nos casamos pronto 💍🥂y nos encantaría que nos acompañes en nuestro festejo! 
+Vas a encontrar tu invitación y demás información en el siguiente link: ${familyLink}
+Podés confirmar tu asistencia ${guestArray.length > 1 ? 'y la de tu grupo familiar ' : ''}hasta el día 06/03.
+Nos vemos ahí ✨
+
+Alda & Fran 🤍`
+
+  navigator.clipboard.writeText(msg)
+  emits('copyLink', msg)
+
+  return msg
 }
 
 const handleFamilyModal = () => {
@@ -55,7 +69,7 @@ const orderedGuests = computed(() => {
           <button v-if="guest.isHead" class="action__btn comment" @click="handleFamilyModal">
             <span class="i-bx:comment-detail w-5 h-5" />
           </button>
-          <button v-if="guest.isHead" class="action__btn link" @click="makeFamilyLink(family.uuid)">
+          <button v-if="guest.isHead" class="action__btn link" @click="makeFamilyLink(family)">
             <span class="i-bx:copy-alt w-5 h-5" />
           </button>
           <button class="action__btn info" @click="handleFamilyModal">
