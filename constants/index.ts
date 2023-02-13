@@ -20,7 +20,7 @@ export const CIVIL: EventData = {
   endDateTime: '2023-03-21T13:30:00',
   maps: 'https://goo.gl/maps/bHFyh2YE8LUw2Wz67',
   modal: PossibleModals.CEREMONIA,
-  description: 'Nos juntamos en La Sede Comunal 12 para celebrar el civil y despues con los que puedan vamos a almorzar a la vuelta.',
-  fantasyName: 'El civil',
+  description: 'Nos juntamos en La Sede Comunal 12 para celebrar el casamiento por civil.',
+  fantasyName: 'Alda y Fran se sasan!',
 }
 

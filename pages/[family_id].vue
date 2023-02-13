@@ -164,8 +164,9 @@ const { url: civilUrl } = useGCalendar({
         src="/images/Grupo02_c.png"
       />
     </aside>
-    <InviteGoldenLines id="regresiva" class="absolute inset-x-0" />
+    <InviteGoldenLines class="absolute inset-x-0" />
     <div
+      id="regresiva"
       class="flex flex-col gap-y-8 lg:flex-row lg:gap-x-24 lg:gap-y-0 items-center justify-center lg:items-start lg:max-w-2xl lg:justify-between mx-auto"
     >
       <InviteEventCard class="z-10 relative mb-20" v-bind="CIVIL" />

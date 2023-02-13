@@ -12,11 +12,20 @@ export default {
           setTimeout(() => { resolve(findEl(hash, ++x || 1)) }, 100)
         })
     }
+    function Position(obj: any) {
+      let currentTop = 0
+      if (obj.offsetParent) {
+        do
+          currentTop += obj.offsetTop
+        while ((obj = obj.offsetParent))
+        return currentTop
+      }
+    }
 
     if (to.hash) {
       const el = await findEl(to.hash, 0) as HTMLElement
       if ('scrollBehavior' in document.documentElement.style)
-        return window.scrollTo({ top: el.offsetTop, behavior: 'smooth' })
+        return window.scrollTo({ top: Position(el), behavior: 'smooth' })
 
       else
         return window.scrollTo(0, el.offsetTop)
