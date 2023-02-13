@@ -21,6 +21,6 @@ export const CIVIL: EventData = {
   maps: 'https://goo.gl/maps/bHFyh2YE8LUw2Wz67',
   modal: PossibleModals.CEREMONIA,
   description: 'Nos juntamos en La Sede Comunal 12 para celebrar el casamiento por civil.',
-  fantasyName: 'Alda y Fran se sasan!',
+  fantasyName: 'Alda y Fran se casan!',
 }
 

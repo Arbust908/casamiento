@@ -49,17 +49,17 @@ function selectedClasses(selection: ConfirmationStatusType) {
       {{ guest.name }}
     </p>
     <div class="px-4 py-1 rounded bg-slate-500 relative">
-      <button :class="selectedClasses(CONFIRMED)" class="w-[100px] p-1 relative z-10" @click="handleSelection(CONFIRMED)">
-        Obvio que si
+      <button :class="selectedClasses(CONFIRMED)" class="w-[80px] p-1 relative z-10" @click="handleSelection(CONFIRMED)">
+        Re si
       </button>
-      <button :class="selectedClasses(DECLINED)" class="w-[100px] p-1 relative z-10" @click="handleSelection(DECLINED)">
+      <button :class="selectedClasses(DECLINED)" class="w-[80px] p-1 relative z-10" @click="handleSelection(DECLINED)">
         No puedo
       </button>
       <Transition name="pop">
         <aside
-          v-if="answer" class="bg-slate-300 rounded w-[100px] h-8 absolute top-1 z-1 transition duration-150 transform ease-out" :class="{
+          v-if="answer" class="bg-slate-300 rounded w-[80px] h-8 absolute top-1 z-1 transition duration-150 transform ease-out" :class="{
             'translate-x-0': confirmation === CONFIRMED,
-            'translate-x-[100px]': confirmation === DECLINED,
+            'translate-x-[80px]': confirmation === DECLINED,
           }"
         />
       </Transition>

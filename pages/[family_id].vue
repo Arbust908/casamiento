@@ -80,10 +80,10 @@ const { url: civilUrl } = useGCalendar({
         </span>
         <div class="date-decorator" />
       </div>
-      <h1 class="text-[100px] md:text-[130px] center flex gap-6 items-center font-main">
-        <span>Alda</span>
+      <h1 class="text-[100px] md:text-[130px] center flex flex-col md:flex-row gap-6 items-center font-main">
+        <span class="-my-12">Alda</span>
         <span class="font-sans font-semibold text-[40px] text-slate-300">&</span>
-        <span>Fran</span>
+        <span class="-my-12">Fran</span>
       </h1>
       <div class="px-6 w-full">
         <div class="date-decorator" />
@@ -314,7 +314,7 @@ const { url: civilUrl } = useGCalendar({
         class="hover:(text-amber-500 underline)"
         @click="openModal(CEREMONIA)"
       >
-        Confirmar asistencia a ceremonia
+        Confirmar asistencia a civil
       </button>
       <button class="hover:(text-amber-500 underline)" @click="openModal(FIESTA)">
         Confirmar asistencia a fiesta
@@ -332,7 +332,7 @@ const { url: civilUrl } = useGCalendar({
         class="hover:(text-amber-500 underline) text-center"
         :href="civilUrl"
       >
-        Agendar ceremonia
+        Agendar civil
       </a>
     </div>
   </section>
@@ -342,7 +342,7 @@ const { url: civilUrl } = useGCalendar({
 section {
     --at-apply: py-[10vw] lg:py-[5vw];
     & > .heading {
-      --at-apply: text-center mb-12;
+      --at-apply: text-center mb-12 px-8;
       & > h2 {
         --at-apply: text-gray-100 text-[60px] font-main;
       }

@@ -1,0 +1,1771 @@
+[
+  {
+    "id": 2,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Flor & Guso",
+    "songTitle": "",
+    "comments": "",
+    "group": "Familia",
+    "uuid": "b3f772ef-1fd4-4a21-8281-3cc9ba91bfc8",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 640,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Flor Blanco",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 2,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 639,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Guso Blanco",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 2,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Guada, Nacho & Emi",
+    "songTitle": "",
+    "comments": "",
+    "group": "Familia",
+    "uuid": "e6a9ae42-5f40-4bef-ac16-63ec54780c9e",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 641,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Guada Blanco",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 3,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 642,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Nacho Varone",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 3,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 643,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Emi Varone",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 3,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Los Manzuoli",
+    "songTitle": "",
+    "comments": "",
+    "group": "Familia",
+    "uuid": "3de40654-2e87-44c5-b65f-28b50b4d2364",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 644,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Fede Manzuoli",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 4,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 645,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Carina",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 4,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 646,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Sere",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 4,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 647,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Pedro",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 4,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Diaz Blanco",
+    "songTitle": "",
+    "comments": "",
+    "group": "Familia",
+    "uuid": "8214be69-9376-428e-a3b7-c1e74be9910f",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 648,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Andy Blanco",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 5,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 649,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Hernan",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 5,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 650,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Lucas Diaz",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 5,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 651,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Angie",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 5,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 652,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Marta",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 5,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Tallos",
+    "songTitle": "",
+    "comments": "",
+    "group": "Familia",
+    "uuid": "c500f2af-37f4-4fd1-a496-b8ac3b75f4fc",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 653,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Juan Tallo",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 6,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 654,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Eve",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 6,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Ro, More y Rosita",
+    "songTitle": "",
+    "comments": "",
+    "group": "Familia",
+    "uuid": "ddb0d93e-2523-4e79-8ccd-635406bd1ffb",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 655,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Rosana Lombardo",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 7,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 656,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "More",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 7,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 657,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Rosita",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 7,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Leo y Mary",
+    "songTitle": "",
+    "comments": "",
+    "group": "Familia",
+    "uuid": "d0bc4024-db31-46e3-b25d-fd14bf9c7414",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 658,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Leo Lombardo",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 9,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 659,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Mary",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 9,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Luli y Diego",
+    "songTitle": "",
+    "comments": "",
+    "group": "Familia",
+    "uuid": "78b97353-2fbe-4eb9-98a0-014386a51e2a",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 660,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Luli Culatina",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 10,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 661,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Diego",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 10,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Nora y Ruben",
+    "songTitle": "",
+    "comments": "",
+    "group": "Familia",
+    "uuid": "19477768-7d65-41e3-94d3-43d549485fce",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 662,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Nora ",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 11,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 663,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Ruben",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 11,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Ale, Hernan, Tati & Sofi",
+    "songTitle": "",
+    "comments": "",
+    "group": "Familia",
+    "uuid": "c948182a-db4d-45e8-9c76-663df6bf2d0d",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 664,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Ale Blanco",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 12,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 665,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Hernan",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 12,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 666,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Tati",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 12,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 667,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Sofi",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 12,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Sol & Churex",
+    "songTitle": "",
+    "comments": "",
+    "group": "Familia",
+    "uuid": "665d114e-02e4-41c6-8f5e-2041f28ad375",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 668,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Sol Manzuoli",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 13,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 669,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Santi",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 13,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Los Adamoli",
+    "songTitle": "",
+    "comments": "",
+    "group": "Maristas",
+    "uuid": "f7097a73-e8f6-4485-9bff-2137d5b13da8",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 670,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Andres Adamoli",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 14,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 671,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Maria Adamoli",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 14,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Los Lennon",
+    "songTitle": "",
+    "comments": "",
+    "group": "Maristas",
+    "uuid": "bb6b25d8-9094-4a68-aa3b-0ff5045d8511",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 672,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Diego Lennon",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 15,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 673,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Asun",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 15,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Los Molina",
+    "songTitle": "",
+    "comments": "",
+    "group": "Maristas",
+    "uuid": "a8bd2cdd-39db-4493-bf25-daa73fc4b893",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 674,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Gabrila Molina",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 16,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 675,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Molina",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 16,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Huevo & Mariu",
+    "songTitle": "",
+    "comments": "",
+    "group": "Maristas",
+    "uuid": "c8b0b467-aa04-46c3-9a18-5e288bb6e31a",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 676,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Huevo Chiatelino",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 17,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 677,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Mariu",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 17,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Los Flaiban",
+    "songTitle": "",
+    "comments": "",
+    "group": "Maristas",
+    "uuid": "a8fe3613-3e03-4e75-934d-a868b40f2d98",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 678,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": " Enrique",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 18,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 744,
+        "createdAt": "2023-01-10T20:31:12.043593+00:00",
+        "updatedAt": "2023-01-10T20:31:12.043593+00:00",
+        "name": "Cinthia",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 18,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Florcita",
+    "songTitle": "",
+    "comments": "",
+    "group": "Casi Familia",
+    "uuid": "01988bf6-59ee-49e3-bfaa-f22501d3bb91",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 679,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Flor Lopez Serror",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 19,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Los Gomez",
+    "songTitle": "",
+    "comments": "",
+    "group": "Casi Familia",
+    "uuid": "bff7d69a-bd59-42df-99ee-25860fd18045",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 680,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Jorge Gomez",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 20,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 681,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Viviana",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 20,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Fer, Cali, Clari & More",
+    "songTitle": "",
+    "comments": "",
+    "group": "Casi Familia",
+    "uuid": "d813e788-bf81-4342-9795-8774dccbcb80",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 682,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Fer ",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 21,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 683,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Cali",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 21,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 684,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Clarita",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 21,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 685,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "More",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 21,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Sole, Walter, Isa & Sofi",
+    "songTitle": "",
+    "comments": "",
+    "group": "Casi Familia",
+    "uuid": "a1e2e6b4-e5fe-4da6-828b-c1637f06e9b5",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 686,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Sole ",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 22,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 687,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Walter",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 22,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 688,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Sofi",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 22,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 689,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Isa",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 22,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Joaco & Cami",
+    "songTitle": "",
+    "comments": "",
+    "group": "San Lucas",
+    "uuid": "617c438f-fc05-4382-bf73-6d174fef7d90",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 690,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Joaco Usher",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 23,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 691,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Cami",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 23,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Nico & Pame",
+    "songTitle": "",
+    "comments": "",
+    "group": "San Lucas",
+    "uuid": "df4765b1-b053-4147-995a-401d6437b847",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 692,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Nico Regueiro",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 24,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 693,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Pame",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 24,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Pefu & Tefi",
+    "songTitle": "",
+    "comments": "",
+    "group": "San Lucas",
+    "uuid": "219ab878-3124-47d5-a81b-52d41aef508c",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 694,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Fede Gomez",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 25,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 695,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Tefi",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 25,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Nacho & Mechi",
+    "songTitle": "",
+    "comments": "",
+    "group": "San Lucas",
+    "uuid": "50c1a956-146c-4eac-93da-e5343a2b44e5",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 696,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Nacho Vila",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 26,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 697,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Mechi",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 26,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Leo & Agus ",
+    "songTitle": "",
+    "comments": "",
+    "group": "San Lucas",
+    "uuid": "3b0cbf83-6f70-4372-8fde-2e72b0596e42",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 698,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Leo Benavidez",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 27,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 699,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Agus",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 27,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Dogui",
+    "songTitle": "",
+    "comments": "",
+    "group": "San Lucas",
+    "uuid": "0795c5f7-09e4-4b69-81d6-6ea933e7f28a",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 700,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Guido Barberia",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 28,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 701,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "1",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 28,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Santi & Agus",
+    "songTitle": "",
+    "comments": "",
+    "group": "San Lucas",
+    "uuid": "6425e7fc-4336-4bed-899e-5297da499e44",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 702,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Santi Rizzi",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 29,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 703,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Agus",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 29,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Ori & Mel",
+    "songTitle": "",
+    "comments": "",
+    "group": "Rolito",
+    "uuid": "5df39741-f9ae-4a76-99be-3d296df6d37f",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 706,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Ignacio ",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 31,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 707,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Mel",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 31,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Seba & Vic",
+    "songTitle": "",
+    "comments": "",
+    "group": "Rolito",
+    "uuid": "b49653c8-75e5-45da-b078-1797dd18f545",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 708,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Sebastian Bronico",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 32,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 709,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Vic",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 32,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Cuth",
+    "songTitle": "",
+    "comments": "",
+    "group": "Rolito",
+    "uuid": "516bd476-9bed-43e0-ae34-7420f9347a01",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 710,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Cuth ",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 33,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Any ",
+    "songTitle": "",
+    "comments": "",
+    "group": "Amigos",
+    "uuid": "a7e557a7-674b-45ef-9ac6-7d44374847d8",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 711,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Any ",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 34,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 712,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "1",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 34,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Pala",
+    "songTitle": "",
+    "comments": "",
+    "group": "Amigos",
+    "uuid": "5bbb5a57-953a-403a-b68e-d9e202783db7",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 713,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Pala ",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 35,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Chicho",
+    "songTitle": "",
+    "comments": "",
+    "group": "Amigos",
+    "uuid": "2bb1a094-9227-4bb9-92e3-8e34ca76da93",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 714,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Chicho ",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 36,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Caro ",
+    "songTitle": "",
+    "comments": "",
+    "group": "Amigos",
+    "uuid": "e2edf1a9-1789-465b-8420-fc5f34a0d9dc",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 715,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Caro ",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 37,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Juli & Sergio",
+    "songTitle": "",
+    "comments": "",
+    "group": "DH",
+    "uuid": "9e035628-3b6f-46b6-ad38-4ceb9bcd3bcd",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 716,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Juli ",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 38,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 717,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Sergio",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 38,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Sofi",
+    "songTitle": "",
+    "comments": "",
+    "group": "DH",
+    "uuid": "a1c03eaa-b514-4c24-973e-ae39de7ada11",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 718,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Sofi ",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 39,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Sol & Alex",
+    "songTitle": "",
+    "comments": "",
+    "group": "DH",
+    "uuid": "24731a61-49d9-47a0-8d14-cd297a970ea4",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 719,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Sol ",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 40,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 720,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Alex",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 40,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Augusto",
+    "songTitle": "",
+    "comments": "",
+    "group": "DH",
+    "uuid": "1b097197-5ede-4656-8fd9-befefe3cdb69",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 721,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Augusto ",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 41,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Tomi & Pao",
+    "songTitle": "",
+    "comments": "",
+    "group": "DH",
+    "uuid": "86635cff-7a66-47ae-92dc-87a67d6c1d7a",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 722,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Tomi ",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 42,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 723,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Pao",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 42,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Adri",
+    "songTitle": "",
+    "comments": "",
+    "group": "DH",
+    "uuid": "9700d783-6730-4486-b394-eea66e380c05",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 724,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Adri ",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 43,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Cris",
+    "songTitle": "",
+    "comments": "",
+    "group": "DH",
+    "uuid": "e20ea170-bb29-4202-bc12-6423e8032ed7",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 725,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Cris ",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 44,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Anto & Leo",
+    "songTitle": "",
+    "comments": "",
+    "group": "DH",
+    "uuid": "fd96910a-9e54-4996-9c0b-3b58edb4cb20",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 726,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Anto ",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 45,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 727,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Leo",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 45,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Ale ",
+    "songTitle": "",
+    "comments": "",
+    "group": "DH",
+    "uuid": "0bd6086f-ebcc-42ec-bfbb-17491f1ad945",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 728,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Ale ",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 46,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 729,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Silvi",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 46,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Viole & Damian",
+    "songTitle": "",
+    "comments": "",
+    "group": "UX",
+    "uuid": "86762f6d-5cd7-4779-8b3d-fce9170e39b8",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 730,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Viole ",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 47,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 731,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Damian",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 47,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Dash & Fede",
+    "songTitle": "",
+    "comments": "",
+    "group": "UX",
+    "uuid": "86596a2b-20b2-4531-bb19-d9aeb111d231",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 732,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Dash ",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 48,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 733,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Fede",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 48,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Gi ",
+    "songTitle": "",
+    "comments": "",
+    "group": "UX",
+    "uuid": "7dc79d0d-10ba-4705-a3e6-f6158404b535",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 734,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Gi ",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 49,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Fer",
+    "songTitle": "",
+    "comments": "",
+    "group": "Rolito",
+    "uuid": "6ef770ff-eed3-4781-a945-317f0eab5451",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 735,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Fernando Urraibaru",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 50,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Erica",
+    "songTitle": "",
+    "comments": "",
+    "group": "Casi Familia",
+    "uuid": "9a9b2849-a34b-427a-a59d-8d0d2365cafc",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 736,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Erica ",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 51,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Sonia",
+    "songTitle": "",
+    "comments": "",
+    "group": "Casi Familia",
+    "uuid": "0d9bc4eb-0d33-41fc-b093-8e662213be3d",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 737,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Sonia ",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 52,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 738,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "1",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 52,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Ari & Sol",
+    "songTitle": "",
+    "comments": "",
+    "group": "DH",
+    "uuid": "0377f23e-ca2b-4d5a-a90b-acede712d453",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 739,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Ari ",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 53,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 740,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Sol",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 53,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Adrian, Silvia & Santino",
+    "songTitle": "",
+    "comments": "",
+    "group": "Casi Familia",
+    "uuid": "3e86c0b1-ef75-4690-9af8-91d16b3b17c3",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 741,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Adrián Maradei",
+        "isHead": 1,
+        "confirmed": 0,
+        "familyId": 54,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 742,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Silvia",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 54,
+        "ceremonyConfirm": 1
+      },
+      {
+        "id": 743,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Santino",
+        "isHead": 0,
+        "confirmed": 0,
+        "familyId": 54,
+        "ceremonyConfirm": 1
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "createdAt": "2023-01-02T14:37:29.919356+00:00",
+    "updatedAt": "2023-01-02T14:37:29.919356+00:00",
+    "name": "Diego & Male",
+    "songTitle": "",
+    "comments": "Meneaito in progress ",
+    "group": "Rolito",
+    "uuid": "d3593e4c-8b52-4463-82e2-a0fb207fdf70",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 704,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Diego Gabrieli",
+        "isHead": 1,
+        "confirmed": 3,
+        "familyId": 30,
+        "ceremonyConfirm": 3
+      },
+      {
+        "id": 705,
+        "createdAt": "2023-01-02T15:26:07.542329+00:00",
+        "updatedAt": "2023-01-02T15:26:07.542329+00:00",
+        "name": "Male",
+        "isHead": 0,
+        "confirmed": 3,
+        "familyId": 30,
+        "ceremonyConfirm": 3
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "createdAt": "2022-12-29T00:29:00.866256+00:00",
+    "updatedAt": "2022-12-29T00:29:00.866256+00:00",
+    "name": "Novios",
+    "songTitle": "La conga",
+    "comments": "Hola, somos los novios",
+    "group": "novios",
+    "uuid": "f5cba7f2-0190-4540-97eb-fbc1214963a6",
+    "ceremonyComment": null,
+    "guests": [
+      {
+        "id": 2,
+        "createdAt": "2022-12-29T00:29:54+00:00",
+        "updatedAt": "2022-12-29T00:29:54+00:00",
+        "name": "Aldana Culatina",
+        "isHead": 0,
+        "confirmed": 3,
+        "familyId": 1,
+        "ceremonyConfirm": 3
+      },
+      {
+        "id": 1,
+        "createdAt": "2022-12-29T00:29:27+00:00",
+        "updatedAt": "2022-12-29T00:29:27+00:00",
+        "name": "Francisco Blanco",
+        "isHead": 1,
+        "confirmed": 3,
+        "familyId": 1,
+        "ceremonyConfirm": 3
+      }
+    ]
+  }
+]

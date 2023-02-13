@@ -38,7 +38,7 @@ watch(
 const modalTitle = computed(() => {
   switch (currentModal.value) {
     case PossibleModals.CEREMONIA:
-      return 'Te esperamos para el Civil?'
+      return '¿Venís al civil?'
     case PossibleModals.FIESTA:
       return '¿Venís a la fiesta?'
     case PossibleModals.MUSIC:
