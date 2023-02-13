@@ -24,7 +24,7 @@ function handleConfirmChange(guest: Guest) {
 }
 
 async function handleConfirm() {
-  const confirmRes = await confirmFamily({ guests: guests.value })
+  const confirmRes = await confirmFamily({ guests: guests.value, comment: 'no comment, bro' })
   if (confirmRes)
     closeModal()
 }

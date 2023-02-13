@@ -26,13 +26,15 @@ export const useFamilyStore = defineStore('family', () => {
       console.error(err)
     }
   }
-  async function confirmFamily(confirmGuests: { guests: Guest[]; comment?: string }) {
+  async function confirmFamily(confirmGuests: { guests: Guest[]; comment: string }) {
     if (!confirmGuests.guests.length)
       return console.error('No guests to confirm')
-    selectedFamily.value!.guests = confirmGuests.guests
 
-    if (confirmGuests.comment)
-      selectedFamily.value!.comments = confirmGuests.comment
+    if (!confirmGuests.comment)
+      return console.error('No comment to confirm')
+
+    selectedFamily.value!.guests = confirmGuests.guests
+    selectedFamily.value!.comments = confirmGuests.comment
 
     try {
       const confirmations = confirmGuests.guests.map((guest) => {
