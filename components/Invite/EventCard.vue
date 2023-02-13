@@ -34,24 +34,26 @@ const when = computed(() => {
     <picture class="p-6 rounded-full bg-slate-600 text-slate-200">
       <SvgCeremony />
     </picture>
-    <h3 class="grid grid-cols-[15px_1fr_15px] w-full">
-      <svg
+    <h3 class="grid w-full">
+      <!--       <svg
         x="0px" y="0px"
         viewBox="0 0 19.8 65.3"
-        class="my-2"
+        class="my-2 max-h-[64px]"
       >
         <polygon class="bannerSvg" points="19.8,65.3 19.8,0 0,0 19.3,32.1 0,65.3 " />
-      </svg>
-      <span class="flex items-center bg-accent text-[50px] font-bold text-slate-800 px-4 justify-center font-main max-h-[70px]">
-        {{ event }}
+      </svg> -->
+      <span class="flex items-center bg-accent px-4 justify-center max-h-[64px] rounded-xl">
+        <span class="font-bold text-slate-800 font-main text-[50px]">
+          {{ event }}
+        </span>
       </span>
-      <svg
+      <!--  <svg
         x="0px" y="0px"
         viewBox="0 0 21.2 65.3"
-        class="my-2"
+        class="my-2 max-h-[64px]"
       >
         <polygon class="bannerSvg" points="0,0 0,65.3 21.2,65.3 0.8,31.1 21.2,0 " />
-      </svg>
+      </svg> -->
     </h3>
     <div class="info-box">
       <h6>Día</h6>
