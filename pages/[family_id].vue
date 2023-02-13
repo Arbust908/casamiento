@@ -88,9 +88,7 @@ const { url: civilUrl } = useGCalendar({
       <div class="px-6 w-full">
         <div class="date-decorator" />
       </div>
-      <h2 class="text-[24px] font-regular">
-        Hola {{ data?.name }}!!!
-      </h2>
+      <h2 class="text-[24px] font-regular" />
       <NuxtLink href="#regresiva">
         <i class="i-ri-arrow-drop-down-line text-6xl animate-bounce mt-6" />
       </NuxtLink>
@@ -114,7 +112,7 @@ const { url: civilUrl } = useGCalendar({
       <div
         class="col-start-1 row-start-1 flex flex-col gap-y-6 justify-center items-center"
       >
-        <span class="text-[40px] font-regular">Falta</span>
+        <span class="text-[32px] md:text-[40px] font-regular">Faltan</span>
 
         <div class="flex divide-x-2 divide-slate-500 max-sm:max-w-sm">
           <ClientOnly>
@@ -138,7 +136,7 @@ const { url: civilUrl } = useGCalendar({
             </div>
           </ClientOnly>
         </div>
-        <span class="text-[28px] font-regular"> para la fiesta! </span>
+        <span class="text-[20px] md:text-[28px] font-regular"> para la fiesta! </span>
       </div>
     </div>
   </section>
