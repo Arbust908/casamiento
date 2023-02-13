@@ -26,7 +26,7 @@ export const useFamilyStore = defineStore('family', () => {
       console.error(err)
     }
   }
-  async function confirmFamily(confirmGuests: { guests: Guest[]; comment: string }) {
+  async function confirmFamily(confirmGuests: { guests: Guest[]; comment?: string }) {
     if (!confirmGuests.guests.length)
       return console.error('No guests to confirm')
 
