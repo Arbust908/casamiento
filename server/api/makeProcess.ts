@@ -6,10 +6,7 @@ import { serverSupabaseClient } from '#supabase/server'
 const guestListArray = guestList.split(/\r?\n/)
 const listHeaders = guestListArray.shift()?.split(',')
 
-let maxSum = 0
-
 const result = guestListArray.map((guest) => {
-  maxSum++
   const regex = /"(.*?)"/g
   const result = guest.match(regex)
   const keyWord = result?.[0] || '"'
@@ -115,7 +112,6 @@ export default eventHandler(async (event) => {
     })
   }
   const familyIdsTable = (data as Family[])?.map(family => [family.id, Number(family.name)]) || []
-  console.log(familyIdsTable)
   const makeGuests = result.map(family => family[1]).flat() as Guest[]
   const makeGuestsWithFamilyId = makeGuests.map((guest) => {
     const familyId = familyIdsTable.find(family => family[1] === Number(guest.familyId))
