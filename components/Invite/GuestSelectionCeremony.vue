@@ -50,7 +50,7 @@ function selectedClasses(selection: ConfirmationStatusType) {
     </p>
     <div class="px-4 py-1 rounded bg-slate-500 relative">
       <button :class="selectedClasses(CONFIRMED)" class="w-[80px] p-1 relative z-10" @click="handleSelection(CONFIRMED)">
-        Re si
+        Re si!
       </button>
       <button :class="selectedClasses(DECLINED)" class="w-[80px] p-1 relative z-10" @click="handleSelection(DECLINED)">
         No puedo
