@@ -6,8 +6,16 @@ import { serverSupabaseClient } from '#supabase/server'
 const guestListArray = guestList.split(/\r?\n/)
 const listHeaders = guestListArray.shift()?.split(',')
 
+let maxSum = 0
+
 const result = guestListArray.map((guest) => {
-  const guestArray = guest.replaceAll('"', '').split(',')
+  maxSum++
+  const regex = /"(.*?)"/g
+  const result = guest.match(regex)
+  const keyWord = result?.[0] || '"'
+
+  const guestArray = guest.replaceAll(keyWord, '').split(',')
+
   const guestObject: { [key: string]: string } = {}
   if (listHeaders) {
     listHeaders.forEach((header, index) => {
@@ -17,6 +25,7 @@ const result = guestListArray.map((guest) => {
 
   return guestObject
 }).map((guest) => {
+  /* console.log(guest) */
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { email, delete1, ...correctedGuest } = guest
   return correctedGuest
@@ -26,7 +35,6 @@ const result = guestListArray.map((guest) => {
     surname,
     plusOne,
     group,
-    familyName,
     miembroUno,
     miembroDos,
     miembroTres,
