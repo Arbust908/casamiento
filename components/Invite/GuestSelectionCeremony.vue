@@ -37,7 +37,7 @@ function handleSelection(selection: ConfirmationStatusType) {
 }
 function selectedClasses(selection: ConfirmationStatusType) {
   return {
-    'text-slate-700 font-bold': confirmation.value === selection,
+    'text-slate-700': confirmation.value === selection,
     'text-slate-300': confirmation.value !== selection,
   }
 }
@@ -49,17 +49,17 @@ function selectedClasses(selection: ConfirmationStatusType) {
       {{ guest.name }}
     </p>
     <div class="px-4 py-1 rounded bg-slate-500 relative">
-      <button :class="selectedClasses(CONFIRMED)" class="w-16 p-1 relative z-10" @click="handleSelection(CONFIRMED)">
-        Voy!
+      <button :class="selectedClasses(CONFIRMED)" class="w-[100px] p-1 relative z-10" @click="handleSelection(CONFIRMED)">
+        Obvio que si
       </button>
-      <button :class="selectedClasses(DECLINED)" class="w-16 p-1 relative z-10" @click="handleSelection(DECLINED)">
-        No voy
+      <button :class="selectedClasses(DECLINED)" class="w-[100px] p-1 relative z-10" @click="handleSelection(DECLINED)">
+        No puedo
       </button>
       <Transition name="pop">
         <aside
-          v-if="answer" class="bg-slate-300 rounded w-16 h-8 absolute top-1 z-1 transition duration-150 transform ease-out" :class="{
-            'translate-x-0': confirmation === DECLINED,
-            'translate-x-16': confirmation === CONFIRMED,
+          v-if="answer" class="bg-slate-300 rounded w-[100px] h-8 absolute top-1 z-1 transition duration-150 transform ease-out" :class="{
+            'translate-x-0': confirmation === CONFIRMED,
+            'translate-x-[100px]': confirmation === DECLINED,
           }"
         />
       </Transition>

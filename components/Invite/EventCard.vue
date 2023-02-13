@@ -42,7 +42,7 @@ const when = computed(() => {
       >
         <polygon class="bannerSvg" points="19.8,65.3 19.8,0 0,0 19.3,32.1 0,65.3 " />
       </svg>
-      <span class="flex items-center bg-[#CFD6BB] text-[50px] font-bold text-slate-800 px-4 justify-center font-main">
+      <span class="flex items-center bg-accent text-[50px] font-bold text-slate-800 px-4 justify-center font-main max-h-[70px]">
         {{ event }}
       </span>
       <svg
@@ -86,7 +86,7 @@ const when = computed(() => {
 
 <style scoped lang='scss'>
 .bannerSvg {
-    fill: #CFD6BB;
+    fill: #C1B49A;
     --at-apply: h-full;
 }
 .info-box {

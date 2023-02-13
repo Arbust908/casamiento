@@ -40,8 +40,8 @@ onBeforeMount(() => {
     <template v-for="g in guests" :key="g.id">
       <InviteGuestSelectionCeremony :guest="g" class="w-full" @change="handleConfirmChange" />
     </template>
-    <button class="btn main !mt-8" @click="handleConfirm">
-      Contestar
+    <button class="submit-btn" @click="handleConfirm">
+      Enviar
     </button>
   </section>
 </template>

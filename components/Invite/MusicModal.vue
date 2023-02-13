@@ -17,15 +17,15 @@ async function handleConfirm() {
 </script>
 
 <template>
-  <p>Queremos que nuestra fiesta sea unica, asi que si tenes alguna recomendacion de misuca que siempre quiziste escuchar en un casamiento este es tu momento</p>
+  <p class="mb-6">
+    Queremos saber que canción te encantaría que suene en la fiesta. <br>
+    Es tu oportunidad de pedir lo que quieras!
+  </p>
 
   <form class="flex flex-col" @submit.prevent="handleConfirm">
-    <label for="song" class="text-slate-200 my-4">
-      <p>Recomendanos <b class="text-brick-400">ESA</b> cancion que no puede faltar</p>
-    </label>
     <input id="song" v-model="songTitle" type="text" class="border border-slate-200 rounded-lg p-2 mb-4">
-    <button class="bg-brick-500 text-brick-100 rounded-2xl ml-auto py-2 px-6 uppercase text-center transition duration-150 ease-in-out hover:(text-brick-200 bg-brick-600 shadow)">
-      Toma!
+    <button class="submit-btn" @click="handleConfirm">
+      Enviar
     </button>
   </form>
 </template>

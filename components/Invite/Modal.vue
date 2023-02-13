@@ -40,13 +40,13 @@ const modalTitle = computed(() => {
     case PossibleModals.CEREMONIA:
       return 'Te esperamos para el Civil?'
     case PossibleModals.FIESTA:
-      return 'Venis a la Fiesta?'
+      return '¿Venís a la fiesta?'
     case PossibleModals.MUSIC:
-      return 'Pongamos play!'
+      return '¡Dale play!'
     case PossibleModals.DRESS_CODE:
-      return 'Código de Vestimenta'
+      return 'Dress code'
     case PossibleModals.DRIVE:
-      return 'Como llego?'
+      return 'Tips y Notas'
     case PossibleModals.REGALOS:
       return 'Regalos'
     default:
@@ -60,7 +60,7 @@ const modalTitle = computed(() => {
     <aside v-if="backdropOpen" class="modal__backdrop cursor-pointer" @click.self="closeModal()">
       <Transition name="pop-up">
         <article v-if="boxOpen" class="modal__box cursor-auto">
-          <div class="i-ri-close-line text-slate-200 absolute top-3 right-6 w-8 h-8 cursor-pointer" @click="closeModal" />
+          <div class="i-ri-close-line text-slate-200 absolute top-5 right-6 w-8 h-8 cursor-pointer" @click="closeModal" />
           <h3 class="modal__title">
             {{ modalTitle }}
           </h3>
@@ -80,19 +80,10 @@ const modalTitle = computed(() => {
 <style scoped lang='scss'>
 .modal {
   &__backdrop {
-    --at-apply: fixed inset-0 bg-gray-700/50 backdrop-blur-md z-30 flex justify-center items-center h-full;
+    --at-apply: fixed inset-0 bg-dark-800/50 backdrop-blur-md z-30 flex justify-center items-center h-full;
   }
   &__box {
-    --at-apply: max-w-md w-full rounded p-5 bg-slate-700 relative transform will-change-auto shadow shadow-slate-100/25;
-  }
-  &-decoration {
-    --at-apply: absolute -z-1 w-full inset-x-0 transition;
-    &.top {
-      --at-apply: top-0 -translate-y-full -scale-x-100;
-    }
-    &.bottom {
-      --at-apply: bottom-0 translate-y-full;
-    }
+    --at-apply: max-w-md w-full rounded-xl py-5 px-6 bg-slate-700 relative transform will-change-auto;
   }
   &__title {
     --at-apply: text-2xl text-center font-bold mb-12;

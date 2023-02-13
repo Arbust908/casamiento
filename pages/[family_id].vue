@@ -118,23 +118,23 @@ const { url: civilUrl } = useGCalendar({
 
         <div class="flex divide-x-2 divide-slate-500 max-sm:max-w-sm">
           <ClientOnly>
-            <div class="flex flex-col gap-y-3 px-4 py-1 items-center w-20">
-              <span class="text-4xl font-semibold">{{ daysLeft }}</span>
-              <span class="text-lg font-light">días</span>
+            <div class="counting-box">
+              <span class="counting-number">{{ daysLeft }}</span>
+              <span class="counting-text">días</span>
             </div>
 
-            <div class="flex flex-col gap-y-3 px-4 py-1 items-center w-20">
-              <span class="text-4xl font-semibold">{{ hoursLeft }}</span>
-              <span class="text-lg font-light">hs</span>
+            <div class="counting-box">
+              <span class="counting-number">{{ hoursLeft }}</span>
+              <span class="counting-text">hs</span>
             </div>
 
-            <div class="flex flex-col gap-y-3 px-4 py-1 items-center w-20">
-              <span class="text-4xl font-semibold">{{ minutesLeft }}</span>
-              <span class="text-lg font-light">min</span>
+            <div class="counting-box">
+              <span class="counting-number">{{ minutesLeft }}</span>
+              <span class="counting-text">min</span>
             </div>
-            <div class="flex flex-col gap-y-3 px-4 py-1 items-center w-20">
-              <span class="text-4xl font-semibold">{{ secondsLeft }}</span>
-              <span class="text-lg font-light">seg</span>
+            <div class="counting-box">
+              <span class="counting-number">{{ secondsLeft }}</span>
+              <span class="counting-text">seg</span>
             </div>
           </ClientOnly>
         </div>
@@ -175,12 +175,14 @@ const { url: civilUrl } = useGCalendar({
   <!-- Fiesta -->
   <section class="bg-slate-800 px-6 flex flex-col justify-center text-center">
     <InviteGoldenLines2 />
-    <h2 class="text-[60px] font-main">
-      Fiesta
-    </h2>
-    <p class="mt-10 mb-14 text-[20px]">
-      Hagamos juntos una fiesta épica. Aquí algunos detalles a tener en cuenta.
-    </p>
+    <div class="heading">
+      <h2>
+        Fiesta
+      </h2>
+      <p>
+        Hagamos juntos una fiesta épica. Aquí algunos detalles a tener en cuenta.
+      </p>
+    </div>
     <div
       class="relative flex flex-col gap-8 items-center xl:flex-row xl:justify-center xl:gap-14"
     >
@@ -220,7 +222,7 @@ const { url: civilUrl } = useGCalendar({
   <section
     class="relative overflow-hidden bg-gradient-to-b from-slate-800 to-slate-700"
   >
-    <div class="absolute w-6/12 -right-20 top-10 opacity-50 z-1 lg:w-3/12">
+    <div class="absolute -right-20 top-10 opacity-50 z-1">
       <NuxtPicture
         format="webp"
         loading="lazy"
@@ -230,16 +232,18 @@ const { url: civilUrl } = useGCalendar({
       />
     </div>
 
-    <div
-      class="flex flex-col text-center gap-y-10 mx-auto px-10 relative z-10"
-    >
-      <h2 class="text-[60px] font-main">
+    <div class="heading">
+      <h2>
         Regalos
       </h2>
-      <p class="subtitle">
-        Si deseas regalarnos algo más que tu hermosa presencia...
+      <p>
+        El mejor regalo es que vengan a compartir este momento con nosotros.<br>
+        Pero si insisten en regalarnos algo... ¡Nos pueden ayudar con nuestro viaje!
       </p>
-
+    </div>
+    <div
+      class="col-structure"
+    >
       <NuxtPicture
         class="inline-block cursor-pointer"
         preload
@@ -254,10 +258,9 @@ const { url: civilUrl } = useGCalendar({
       >
         Ver más
       </button>
+      <InviteGoldenLines2 />
     </div>
-    <InviteGoldenLines2 />
   </section>
-  <!-- <section class="bg-gradient-to-b from-slate-800 via-slate-800 to-slate-600" /> -->
   <!-- Instagram -->
   <section class="relative bg-gradient-to-b from-slate-700 to-slate-600">
     <NuxtPicture
@@ -267,37 +270,34 @@ const { url: civilUrl } = useGCalendar({
       src="/images/fondo.png"
       :img-attrs="{ class: 'relative h-full w-full object-cover' }"
     />
-    <div class="mx-auto px-4 text-center space-y-8">
-      <h2 class="text-[60px] font-main">
+    <div class="heading">
+      <h2>
         Compartimos este día junto a vos
       </h2>
-      <p class="px-4">
+      <p>
         Compartí tus fotos y videos de ese hermoso día
       </p>
-
+    </div>
+    <div class="col-structure">
       <div class="px-4 inline-flex w-full justify-center">
         <div class="p-4 flex justify-center items-center rounded-full border-4">
           <i class="i-ri-instagram-line w-10 h-10" />
         </div>
       </div>
 
-      <div class="px-4">
+      <div>
         <a
           target="_blank"
-          href="https://www.instagram.com/"
+          href="https://www.instagram.com/explore/tags/aldayfran/"
           class="text-4xl font-light tracking-wide text-slate-300 uppercase"
         >#aldayfran</a>
       </div>
 
-      <div class="px-4 inline-block w-full" />
-
       <a
         class="inline-block rounded-full bg-slate-100 text-slate-600 font-bold px-6 py-3 uppercase"
         target="_blank"
-        href="https://www.instagram.com/"
+        href="https://www.instagram.com/explore/tags/aldayfran/"
       >Ver en Instagram</a>
-
-      <div class="px-4 inline-block w-full" />
     </div>
   </section>
   <Teleport to="body">
@@ -342,6 +342,29 @@ const { url: civilUrl } = useGCalendar({
 <style scoped lang="scss">
 section {
     --at-apply: py-[10vw] lg:py-[5vw];
+    & > .heading {
+      --at-apply: text-center mb-12;
+      & > h2 {
+        --at-apply: text-gray-100 text-[60px] font-main;
+      }
+      & > p {
+        --at-apply: text-gray-300 text-[20px] font-sans;
+      }
+    }
+    & > .col-structure {
+      --at-apply: flex flex-col text-center mx-auto px-10 relative z-10 items-center gap-y-10;
+    }
+}
+.counting {
+  &-box {
+    --at-apply: flex flex-col gap-y-3 px-4 py-1 items-center md:w-20;
+  }
+  &-number {
+    --at-apply: text-2xl md:text-4xl font-semibold;
+  }
+  &-text {
+    --at-apply: text-md md:text-lg font-light;
+  }
 }
 .header-decoration {
     --at-apply: absolute -top-20;

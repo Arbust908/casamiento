@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="h-full">
+  <div class="h-full color-base">
     <slot />
     <Footer />
   </div>

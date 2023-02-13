@@ -1,28 +1,38 @@
 <script setup lang='ts'>
-
+const accounts = [
+  {
+    name: 'Brubank - C.A. Pesos',
+    data: [
+      ['CBU', '1430001713000038210013'],
+      ['Alias', 'aldanaculatina'],
+      ['CUIT', '27-34976849-1'],
+    ],
+  },
+  {
+    name: 'First Century Bank - Checking',
+    data: [
+      ['Cta', '4020426822105'],
+      ['Nro de ruta ABA', '061120084'],
+      ['Titular', 'Aldana Belen Culatina'],
+    ],
+  },
+]
 </script>
 
 <template>
-  <p class="mb-6 text-xl">
-    El mejor regalo que nos podes hacer es venir y pasarla bien con nosotros.
-  </p>
-  <p class="mb-6">
-    Si nos queres hacer un regalo te dejamos algunas opciones
-  </p>
-  <div class="grid grid-cols-2 gap-6 items-center">
-    <p class="font-bold">
-      Cuenta en pesos
-    </p>
-    <button class="border rounded-full px-4 py-2 flex items-center justify-between gap-x-2 text-slate-100 hover:(text-slate-200 bg-slate-200/25 shadow-xl border-yellow-300)">
-      <span>Cuenta pesos</span>
-      <i class="i-ri-file-copy-2-line" />
-    </button>
-    <p class="font-bold">
-      Cuenta en dolares
-    </p>
-    <button class="border rounded-full px-4 py-2 flex items-center justify-between gap-x-2 text-slate-100 hover:(text-slate-200 bg-slate-200/25 shadow-xl border-yellow-300)">
-      <span>CBU cuenta afuera</span>
-      <i class="i-ri-file-copy-2-line" />
-    </button>
-  </div>
+  <section>
+    <article v-for="acc in accounts" :key="acc.name">
+      <h3>{{ acc.name }}</h3>
+      <InvitePresentDataBtn v-for="d in acc.data" :key="`${acc.name}-${d[0]}`" :data="d" />
+    </article>
+  </section>
 </template>
+
+<style lang="scss" scoped>
+  article {
+    --at-apply: mb-6;
+    h3 {
+      --at-apply: text-xl font-bold mb-2;
+    }
+  }
+</style>

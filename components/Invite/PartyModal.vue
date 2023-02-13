@@ -41,11 +41,11 @@ onBeforeMount(() => {
       <InviteGuestSelection :guest="g" class="w-full" @change="handleConfirmChange" />
     </template>
     <label for="party_comment" class="mt-6 inline-block">
-      <span class="text-sm">Comentanos restricción alimenticia y cualquier otra cosa</span>
-      <textarea id="party_comment" v-model="comment" placeholder="1 vegano - 2 vegetarianos - todos listos para menear" class="w-full rounded-lg border border-slate-200 bg-transparent px-4 pt-3 pb-5 my-3 min-h-10" />
+      <span class="text-sm">Contanos algún dato importante</span>
+      <textarea id="party_comment" v-model="comment" placeholder="1 vegano - 2 vegetarianos - todos listos para menear" class="w-full rounded-lg border border-slate-200 bg-transparent px-4 pt-3 pb-5 mt-3 min-h-10" />
     </label>
-    <button class="btn main !mt-8" @click="handleConfirm">
-      Contestar
+    <button class="submit-btn" @click="handleConfirm">
+      Enviar
     </button>
   </section>
 </template>
