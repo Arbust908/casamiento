@@ -86,7 +86,7 @@ const modalTitle = computed(() => {
     --at-apply: max-w-md w-full rounded-xl py-5 px-6 bg-slate-700 relative transform will-change-auto;
   }
   &__title {
-    --at-apply: text-[60px] text-center font-bold mb-12 font-main;
+    --at-apply: text-[60px] text-center mb-4 font-main;
   }
   &__btn {
     --at-apply: rounded-xl bg-slate-100 border border-transparent text-slate-700 py-1 px-3 mx-auto;

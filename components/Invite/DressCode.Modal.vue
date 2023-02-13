@@ -1,5 +1,5 @@
 <template>
-  <h3 class="my-4 text-2xl">
+  <h3 class="text-center mb-4 text-2xl text-accent font-semibold -mt-4">
     Elegante
   </h3>
   <p>No te preocupes mucho por el dress code. Lo importante es la comodidad para pasarla bien y menear hasta abajo.</p>
