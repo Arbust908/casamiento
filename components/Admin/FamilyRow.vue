@@ -1,13 +1,20 @@
 <script setup lang='ts'>
 import type { Family, Guest } from '@/types'
+import { SentStatus } from '@/types'
 import { glue } from '@/utils/glue'
 
 const props = defineProps<{
   family: Family
 }>()
 
-const emits = defineEmits(['deleteFamily', 'deleteGuest', 'familyModal', 'copyLink'])
+const emits = defineEmits(['refreshPlease', 'deleteGuest', 'familyModal', 'copyLink'])
 const runtimeConfig = useRuntimeConfig()
+
+const router = useRouter()
+const {
+  NOT_SENT,
+  SENT,
+} = SentStatus
 
 const nonHeadClasses = (isHead: number) => {
   return {
@@ -33,6 +40,7 @@ Alda & Fran 🤍`
 
   navigator.clipboard.writeText(msg)
   emits('copyLink', msg)
+  handleSent()
 
   return msg
 }
@@ -51,6 +59,36 @@ const newFamName = computed(() => {
 
   return glue(_guests.map((g: Guest) => g.name))
 })
+
+async function handleSent() {
+  console.log('handleSent')
+  const hasBeenSent = props.family.wasSent === SENT
+  const sentValue = hasBeenSent ? NOT_SENT : SENT
+  try {
+    await $fetch('/api/family/sent', {
+      method: 'PUT',
+      body: JSON.stringify({ id: props.family.id, wasSent: sentValue }),
+    }) as { family: Family }
+    console.log('sent => refresh')
+    emits('refreshPlease')
+  }
+  catch (err) {
+    console.error(err)
+  }
+}
+
+async function handleDeleteFamily() {
+  const id = props.family.id
+  try {
+    await $fetch(`/api/family/delete/${id}`, {
+      method: 'DELETE',
+    })
+    emits('refreshPlease')
+  }
+  catch (err) {
+    console.error(err)
+  }
+}
 </script>
 
 <template>
@@ -75,14 +113,19 @@ const newFamName = computed(() => {
           <button v-if="guest.isHead" class="action__btn comment" @click="handleFamilyModal">
             <span class="i-bx:comment-detail w-5 h-5" />
           </button>
-          <button v-if="guest.isHead" class="action__btn link" @click="makeFamilyLink(family)">
+          <button v-if="family.wasSent === NOT_SENT && guest.isHead" class="action__btn link" @click="makeFamilyLink(family)">
             <span class="i-bx:copy-alt w-5 h-5" />
           </button>
           <button class="action__btn info" @click="handleFamilyModal">
             <span class="i-bx:info-square w-5 h-5" />
           </button>
-          <button class="action__btn disabled:opacity-50 delete" disabled>
-            <span class="i-bx:x-circle w-5 h-5" />
+          <button v-if="guest.isHead" class="action__btn disabled:opacity-50 send" @click="handleSent">
+            <span v-if="family.wasSent === SENT" class="i-ri-mail-open-line w-5 h-5" />
+            <span v-else class="i-ri-mail-line w-5 h-5" />
+            {{ family.wasSent === SENT ? 'Enviado' : 'Enviar' }}
+          </button>
+          <button v-if="guest.isHead" class="action__btn text-rose-500 delete" @click="handleDeleteFamily">
+            <span class="i-ri-delete-bin-6-line w-5 h-5" />
           </button>
         </div>
       </li>
@@ -106,7 +149,7 @@ const newFamName = computed(() => {
   --at-apply: grid gap-4 items-center;
 
   grid-auto-columns: 28px;
-  grid-template-areas: 'music comment link info delete';
+  grid-template-areas: 'music comment link info send send delete';
 }
 }
 
@@ -125,6 +168,9 @@ const newFamName = computed(() => {
     }
     &.link {
       grid-area: link;
+    }
+    &.send {
+      grid-area: send;
     }
     &.delete {
       grid-area: delete;

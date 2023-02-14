@@ -1,5 +1,11 @@
 import type { Guest, WorkingGuest } from './Guest'
 
+export const SentStatus = {
+  NOT_SENT: 1,
+  SENT: 9,
+} as const
+export type SentStatusType = typeof SentStatus[keyof typeof SentStatus]
+
 export interface Family extends WorkingFamily {
   id: number
   createdAt: string
@@ -18,4 +24,5 @@ export interface WorkingFamily {
   songTitle: string
   updatedAt?: string
   uuid?: string
+  wasSent?: number
 }

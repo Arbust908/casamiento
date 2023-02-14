@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
 import type { Family } from '@/types'
-import { ConfirmationStatus } from '@/types'
+import { ConfirmationStatus, SentStatus } from '@/types'
 interface Metric {
   name: string
   value: string
@@ -9,7 +9,7 @@ interface Metric {
 }
 const { CONFIRMED, DECLINED, PENDING } = ConfirmationStatus
 
-const { data } = await useFetch('/api/families')
+const { data, refresh } = await useFetch('/api/families')
 const families = computed<Family[]>(() => data.value?.families ?? [])
 const generalState = useGeneralStore()
 
@@ -96,6 +96,13 @@ const statusOptions: statusOptionType[] = [
 
 const statusSelected = ref(statusOptions[0])
 
+const groupFilters = computed(() => {
+  const groups = families.value.map(family => family.group)
+  const uniqueGroups = [...new Set(groups)]
+  return uniqueGroups
+})
+const selectedGroup = ref('')
+
 const copiedText = ref('')
 
 const handleStatusSelection = (id: number) => {
@@ -135,6 +142,29 @@ const handleFamilyModal = (fam: Family) => {
   openModal('fiesta')
 }
 
+function handleSelectGroup(group: string) {
+  selectedGroup.value = selectedGroup.value === group ? '' : group
+  const _groupFamily = selectedGroup.value === '' ? families.value : families.value.filter(family => family.group === group)
+  filteredFamilies.value = filterFamilies(_groupFamily)
+}
+const {
+  NOT_SENT,
+  SENT,
+} = SentStatus
+const hasSentStatus = ref(0)
+function handelSentGroup(hasSent: number) {
+  hasSentStatus.value = hasSentStatus.value === hasSent ? 0 : hasSent
+  const _groupFamily = hasSentStatus.value === 0 ? families.value : families.value.filter(family => family.wasSent === hasSent)
+  filteredFamilies.value = filterFamilies(_groupFamily)
+}
+
+async function handleRefresh() {
+  console.log('refresh')
+  await refresh()
+  console.log('refreshed')
+  filteredFamilies.value = filterFamilies(families.value)
+}
+
 definePageMeta({
   layout: 'admin',
 })
@@ -143,7 +173,18 @@ definePageMeta({
 <template>
   <section class="p-4 rounded bg-slate-800 h-full text-slate-600">
     <AdminStats :metrics="metrics" />
-    <nav class="m-2 mt-4 flex justify-end gap-x-3">
+    <nav class="m-2 mt-4 flex justify-end items-center gap-x-3">
+      <span class="i-ri-mail-open-line w-5 h-5" :class="hasSentStatus === SENT ? 'text-slate-100' : 'text-slate-500'" @click="handelSentGroup(SENT)" />
+      <span class="i-ri-mail-line w-5 h-5" :class="hasSentStatus === NOT_SENT ? 'text-slate-100' : 'text-slate-500'" @click="handelSentGroup(NOT_SENT)" />
+      <div class="bg-slate-600 w-1 rounded-full h-12" />
+      <button
+        v-for="group in groupFilters" :key="group" class="rounded-full px-2 py-1"
+        :class="selectedGroup === group ? 'bg-slate-300 text-slate-800 ring' : 'bg-slate-800  text-slate-100'"
+        @click="handleSelectGroup(group)"
+      >
+        {{ group }}
+      </button>
+      <div class="bg-slate-600 w-1 rounded-full h-12" />
       <button v-for="opt in statusOptions" :key="opt.id" :class="statusBtnClasses(opt.id)" @click="handleStatusSelection(opt.id)">
         {{ opt.name }}
       </button>
@@ -164,6 +205,7 @@ definePageMeta({
           :family="family"
           @copy-link="handleCopyLink"
           @family-modal="handleFamilyModal"
+          @refresh-please="handleRefresh"
         />
       </ul>
     </div>

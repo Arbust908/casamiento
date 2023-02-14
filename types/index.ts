@@ -1,6 +1,7 @@
 import type { Family, WorkingFamily } from './Family'
 import type { Guest, WorkingGuest } from './Guest'
 import type { Role, User } from './User'
+import { SentStatus } from './Family'
 import type { PossibleModals } from '@/composables/general'
 
 export const ConfirmationStatus = {
@@ -24,3 +25,4 @@ interface EventData {
 }
 
 export type { Family, WorkingFamily, Guest, WorkingGuest, User, Role, ConfirmationStatusType, EventData, PossibleModalsType }
+export { SentStatus }
