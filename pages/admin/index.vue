@@ -35,7 +35,7 @@ const filterFamilies = (flias: Family[]) => {
       return true
 
     return groupFilter.value.includes(family.group)
-  }).sort((fa: Family, fb: Family) => fa.id > fb.id ? 1 : -1)
+  }).sort((fa: Family, fb: Family) => fa.id - fb.id)
 }
 
 const metrics = computed<Metric[]>(() => {

@@ -34,7 +34,8 @@ export const useFamilyStore = defineStore('family', () => {
       return console.error('No comment to confirm')
 
     selectedFamily.value!.guests = confirmGuests.guests
-    selectedFamily.value!.comments = confirmGuests.comment
+    if (confirmGuests.comment !== 'no comment, bro')
+      selectedFamily.value!.comments = confirmGuests.comment
 
     try {
       const confirmations = confirmGuests.guests.map((guest) => {
@@ -53,7 +54,7 @@ export const useFamilyStore = defineStore('family', () => {
         method: 'PUT',
         body: JSON.stringify({
           id: selectedFamily.value?.id,
-          comments: confirmGuests.comment,
+          comments: selectedFamily.value!.comments,
         }),
       })
 

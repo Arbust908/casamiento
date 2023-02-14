@@ -45,6 +45,12 @@ const orderedGuests = computed(() => {
   const _guests = JSON.parse(JSON.stringify(props.family.guests))
   return _guests.sort((a: Guest, b: Guest) => b.isHead - a.isHead)
 })
+
+const newFamName = computed(() => {
+  const _guests = JSON.parse(JSON.stringify(props.family.guests))
+
+  return glue(_guests.map((g: Guest) => g.name))
+})
 </script>
 
 <template>
@@ -52,7 +58,7 @@ const orderedGuests = computed(() => {
     <TransitionGroup name="fade">
       <li v-for="guest in orderedGuests" :key="guest.id" class="table-body">
         <span class="text-sm font-medium text-gray-700" :class="nonHeadClasses(guest.isHead)">
-          {{ family.name }}
+          {{ newFamName }}
         </span>
         <span class="i-bx:crown w-5 h-5" :class="nonHeadClasses(guest.isHead)" />
         <span class="text-sm font-medium text-gray-700">
