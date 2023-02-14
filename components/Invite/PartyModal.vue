@@ -25,8 +25,7 @@ function handleConfirmChange(guest: Guest) {
 
 async function handleConfirm() {
   const confirmRes = await confirmFamily({ guests: guests.value, comment: comment.value || '--' })
-  if (confirmRes)
-    closeModal()
+  closeModal()
 }
 
 onBeforeMount(() => {
