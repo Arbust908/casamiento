@@ -159,10 +159,21 @@ function handelSentGroup(hasSent: number) {
 }
 
 async function handleRefresh() {
-  console.log('refresh')
   await refresh()
-  console.log('refreshed')
   filteredFamilies.value = filterFamilies(families.value)
+
+  console.log('selectedGroup', selectedGroup.value)
+  console.log('hasSentStatus', hasSentStatus.value)
+  console.log('statusSelected', statusSelected.value)
+
+  if (selectedGroup.value !== '')
+    handleSelectGroup(selectedGroup.value)
+
+  if (hasSentStatus.value !== 0)
+    handelSentGroup(hasSentStatus.value)
+
+  if (statusSelected.value.id !== 0)
+    handleStatusSelection(statusSelected.value.id)
 }
 
 definePageMeta({

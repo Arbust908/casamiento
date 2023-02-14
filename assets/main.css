@@ -12,7 +12,7 @@
 
 /* https://css-tricks.com/how-i-added-scroll-snapping-to-my-twitter-timeline/ */
 html {
-  color-scheme: light dark;
+  color-scheme: dark;
 }
 html.dark {
   color-scheme: dark;
