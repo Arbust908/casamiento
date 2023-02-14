@@ -10,9 +10,8 @@ export default eventHandler(async (event) => {
       statusMessage: 'Family not found',
     })
   }
-  console.log(data)
+
   const guestIds = data[0].guests.map(guest => guest.id)
-  console.log(guestIds)
 
   for (let i = 0; i < guestIds.length; i++) {
     const id = guestIds[i]
@@ -29,7 +28,6 @@ export default eventHandler(async (event) => {
   const { error } = await client.from('families').delete().eq('id', params.id)
 
   if (!error) {
-    console.log('Job Done')
     return params.id
   }
   else {

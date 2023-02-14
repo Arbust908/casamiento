@@ -17,24 +17,18 @@ const { openModal } = generalState
 const { hasModal } = storeToRefs(generalState)
 
 const confirmedFilter = ref<false | number>(false)
-const groupFilter = ref<string[]>([])
 
 const filteredFamilies = ref(families.value)
 
 const filterFamilies = (flias: Family[]) => {
   const _families = JSON.parse(JSON.stringify(flias))
   return _families.filter((family: Family) => {
-    family.guests = family.guests?.filter((guest) => {
+    return family.guests?.filter((guest) => {
       if (confirmedFilter.value)
         return guest.confirmed === confirmedFilter.value
 
       return true
     })
-
-    if (groupFilter.value.length === 0)
-      return true
-
-    return groupFilter.value.includes(family.group)
   }).sort((fa: Family, fb: Family) => fa.id - fb.id)
 }
 
@@ -101,11 +95,12 @@ const groupFilters = computed(() => {
   const uniqueGroups = [...new Set(groups)]
   return uniqueGroups
 })
-const selectedGroup = ref('')
 
 const copiedText = ref('')
 
+const selectedGroup = ref('')
 const handleStatusSelection = (id: number) => {
+  console.log('Status Filter')
   statusSelected.value = statusOptions.find(option => option.id === id) ?? statusOptions[0]
   confirmedFilter.value = statusSelected.value.value
   filteredFamilies.value = filterFamilies(families.value)
@@ -143,6 +138,7 @@ const handleFamilyModal = (fam: Family) => {
 }
 
 function handleSelectGroup(group: string) {
+  console.log('Group Filter')
   selectedGroup.value = selectedGroup.value === group ? '' : group
   const _groupFamily = selectedGroup.value === '' ? families.value : families.value.filter(family => family.group === group)
   filteredFamilies.value = filterFamilies(_groupFamily)
@@ -153,6 +149,7 @@ const {
 } = SentStatus
 const hasSentStatus = ref(0)
 function handelSentGroup(hasSent: number) {
+  console.log('hasSent Filter')
   hasSentStatus.value = hasSentStatus.value === hasSent ? 0 : hasSent
   const _groupFamily = hasSentStatus.value === 0 ? families.value : families.value.filter(family => family.wasSent === hasSent)
   filteredFamilies.value = filterFamilies(_groupFamily)
@@ -166,14 +163,23 @@ async function handleRefresh() {
   console.log('hasSentStatus', hasSentStatus.value)
   console.log('statusSelected', statusSelected.value)
 
-  if (selectedGroup.value !== '')
-    handleSelectGroup(selectedGroup.value)
+  if (selectedGroup.value !== '') {
+    const selectGroup = selectedGroup.value
+    selectedGroup.value = ''
+    handleSelectGroup(selectGroup)
+  }
 
-  if (hasSentStatus.value !== 0)
-    handelSentGroup(hasSentStatus.value)
+  if (hasSentStatus.value !== 0) {
+    const hasSent = hasSentStatus.value
+    hasSentStatus.value = 0
+    handelSentGroup(hasSent)
+  }
 
-  if (statusSelected.value.id !== 0)
-    handleStatusSelection(statusSelected.value.id)
+  if (statusSelected.value.id !== 0) {
+    const seletId = statusSelected.value.id
+    statusSelected.value = statusOptions[0]
+    handleStatusSelection(seletId)
+  }
 }
 
 definePageMeta({
