@@ -30,6 +30,7 @@ export default eventHandler(async (event) => {
 
   if (!error) {
     console.log('Job Done')
+    return params.id
   }
   else {
     console.error(error)
