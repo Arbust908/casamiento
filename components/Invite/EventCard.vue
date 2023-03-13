@@ -10,6 +10,7 @@ interface Props {
   modal: PossibleModalsType
   description: string
   fantasyName: string
+  noFamily?: boolean
 }
 const props = defineProps<Props>()
 const generalState = useGeneralStore()
@@ -54,7 +55,7 @@ const when = computed(() => {
     <div class="info-box">
       <h6>Día</h6>
       <p>{{ when }}</p>
-      <button class="btn main w-[220px]" @click="openModal(modal)">
+      <button v-if="!noFamily" class="btn main w-[220px]" @click="openModal(modal)">
         Confirmar asistencia
       </button>
     </div>

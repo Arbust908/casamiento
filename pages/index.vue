@@ -1,10 +1,34 @@
 <script setup lang="ts">
-import { PARTY } from '@/constants'
+import { storeToRefs } from 'pinia'
+import { PossibleModals, useGeneralStore } from '@/composables/general'
+import { CIVIL, PARTY } from '@/constants'
+import { useFamilyStore } from '@/stores/family'
 
 const { daysLeft, hoursLeft, minutesLeft, secondsLeft } = useCountdown(
   PARTY.startDateTime,
 )
 const topDate = useDateFormat(PARTY.startDateTime, 'DD.MM.YYYY')
+
+const generalState = useGeneralStore()
+
+const { openModal } = (generalState)
+const { hasModal } = storeToRefs(generalState)
+
+const { MUSIC, DRESS_CODE, DRIVE, FIESTA, CEREMONIA, REGALOS } = PossibleModals
+const { url: partyUrl } = useGCalendar({
+  title: PARTY.fantasyName,
+  location: PARTY.place,
+  description: PARTY.description,
+  startDateTime: PARTY.startDateTime,
+  endDateTime: PARTY.endDateTime,
+})
+const { url: civilUrl } = useGCalendar({
+  title: CIVIL.fantasyName,
+  location: CIVIL.place,
+  description: CIVIL.description,
+  startDateTime: CIVIL.startDateTime,
+  endDateTime: CIVIL.endDateTime,
+})
 </script>
 
 <template>
@@ -51,18 +75,18 @@ const topDate = useDateFormat(PARTY.startDateTime, 'DD.MM.YYYY')
         </span>
         <div class="date-decorator" />
       </div>
-      <h1 class="text-[100px] md:text-[130px] center flex gap-6 items-center font-main">
-        <span>Alda</span>
+      <h1 class="text-[100px] md:text-[130px] center flex flex-col md:flex-row gap-6 items-center font-main">
+        <span class="-my-12">Alda</span>
         <span class="font-sans font-semibold text-[40px] text-slate-300">&</span>
-        <span>Fran</span>
+        <span class="-my-12">Fran</span>
       </h1>
       <div class="px-6 w-full">
         <div class="date-decorator" />
       </div>
       <h2 class="text-[24px] font-regular" />
-      <div>
+      <NuxtLink href="#regresiva">
         <i class="i-ri-arrow-drop-down-line text-6xl animate-bounce mt-6" />
-      </div>
+      </NuxtLink>
     </div>
     <InviteTopCurve
       class="absolute -bottom-px w-full -z-1"
@@ -134,24 +158,17 @@ const topDate = useDateFormat(PARTY.startDateTime, 'DD.MM.YYYY')
       />
     </aside>
     <InviteGoldenLines class="absolute inset-x-0" />
-  </section>
-  <!-- Fiesta -->
-  <section class="bg-slate-800 px-6 flex flex-col justify-center text-center">
-    <InviteGoldenLines2 />
     <div
-      class="relative flex flex-col gap-8 items-center xl:flex-row xl:justify-center xl:gap-14"
+      id="regresiva"
+      class="flex flex-col gap-y-8 lg:flex-row lg:gap-x-24 lg:gap-y-0 items-center justify-center lg:items-start lg:max-w-2xl lg:justify-between mx-auto"
     >
-      <NuxtPicture
-        format="webp"
-        loading="lazy"
-        src="/images/Grupo03.png"
-        class="absolute -top-40 -left-30 scale-50"
-      />
+      <InviteEventCard class="z-10 relative mb-20" v-bind="CIVIL" no-family />
+      <InviteEventCard class="z-10 relative mb-20" v-bind="PARTY" no-family />
     </div>
   </section>
   <!-- Regalos -->
   <section
-    class="relative overflow-hidden bg-gradient-to-b from-slate-800 to-slate-700"
+    class="relative overflow-hidden bg-slate-800"
   >
     <div class="absolute -right-20 top-10 opacity-50 z-1">
       <NuxtPicture
@@ -162,12 +179,76 @@ const topDate = useDateFormat(PARTY.startDateTime, 'DD.MM.YYYY')
         :img-attrs="{ class: 'inline-block w-full' }"
       />
     </div>
+    <InviteGoldenLines2 />
+
+    <div class="heading">
+      <h2>
+        Regalos
+      </h2>
+      <p>
+        El mejor regalo es que vengan a compartir este momento con nosotros.<br>
+        Pero si insisten en regalarnos algo... ¡Nos pueden ayudar con nuestro viaje!
+      </p>
+    </div>
     <div
       class="col-structure"
     >
-      <InviteGoldenLines2 />
+      <NuxtPicture
+        class="inline-block cursor-pointer"
+        preload
+        src="/svg/regalos.svg"
+        :img-attrs="{ class: 'h-24 w-24 mx-auto' }"
+        @click="openModal(REGALOS)"
+      />
+
+      <button
+        class="btn main rounded-xl bg-slate-100 text-slate-600 font-bold px-6 py-2 uppercase w-50 mx-auto"
+        @click="openModal(REGALOS)"
+      >
+        Ver más
+      </button>
     </div>
   </section>
+
+  <!-- Fiesta -->
+  <section class="bg-gradient-to-b from-slate-800 to-slate-700 flex flex-col justify-center text-center">
+    <InviteGoldenLines2 />
+    <div class="heading">
+      <h2>
+        Fiesta
+      </h2>
+      <p>
+        Hagamos juntos una fiesta épica. Aquí algunos detalles a tener en cuenta.
+      </p>
+    </div>
+    <div
+      class="relative flex flex-col gap-8 items-center xl:flex-row xl:justify-center xl:gap-14"
+    >
+      <NuxtPicture
+        format="webp"
+        loading="lazy"
+        src="/images/Grupo03.png"
+        class="absolute -top-40 -left-30 scale-50"
+      />
+      <!-- Dress Code -->
+      <InvitePartyCard
+        title="Dress Code"
+        text="Una orientación para tu vestuario"
+        icon="vestuario"
+        btn-text="ver más"
+        :modal="DRESS_CODE"
+      />
+      <!-- Notas -->
+      <InvitePartyCard
+        title="Tips y Notas"
+        text="Información adicional para tener en cuenta"
+        icon="tips"
+        btn-text="+ Info"
+        :modal="DRIVE"
+      />
+    </div>
+  </section>
+
   <!-- Instagram -->
   <section class="relative bg-gradient-to-b from-slate-700 to-slate-600">
     <NuxtPicture
@@ -207,6 +288,9 @@ const topDate = useDateFormat(PARTY.startDateTime, 'DD.MM.YYYY')
       >Ver en Instagram</a>
     </div>
   </section>
+  <Teleport to="body">
+    <InviteModal :open="hasModal" />
+  </Teleport>
   <!-- Footer -->
   <section class="flex flex-col px-6 gap-y-5 items-center">
     <h4 class="text-6xl font-main flex text-center gap-4 flex items-center">
@@ -214,14 +298,28 @@ const topDate = useDateFormat(PARTY.startDateTime, 'DD.MM.YYYY')
       <span class="text-slate-400 font-sans text-[40px]">&</span>
       <span>Fran</span>
     </h4>
+    <div class="flex flex-col gap-y-6 lg:flex-row lg:gap-y-0 lg:gap-x-6 font-sans text-[16px]">
+      <a
+        class="hover:(text-amber-500 underline) text-center"
+        :href="partyUrl"
+      >
+        Agendar fiesta
+      </a>
+      <a
+        class="hover:(text-amber-500 underline) text-center"
+        :href="civilUrl"
+      >
+        Agendar civil
+      </a>
+    </div>
   </section>
 </template>
 
 <style scoped lang="scss">
 section {
-    --at-apply: py-[10vw] lg:py-[5vw];
+    --at-apply: py-[5vw] lg:py-[2vw];
     & > .heading {
-      --at-apply: text-center mb-12;
+      --at-apply: text-center mb-12 px-8;
       & > h2 {
         --at-apply: text-gray-100 text-[60px] font-main;
       }
