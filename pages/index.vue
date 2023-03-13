@@ -96,7 +96,7 @@ const { url: civilUrl } = useGCalendar({
     />
   </section>
   <!-- Cuenta Regresiva -->
-  <section class="bg-slate-800 flex justify-center items-center py-10 relative">
+  <section class="bg-slate-800 flex justify-center items-center py-10 relative -mb-20">
     <div class="grid max-w-lg -top-40 relative">
       <NuxtPicture
         format="webp"
